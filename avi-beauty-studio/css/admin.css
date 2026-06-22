@@ -1,0 +1,264 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Jost',sans-serif;
+  background:#0b0b0c;
+  color:#fff;
+}
+
+.admin-wrap{
+  display:flex;
+  min-height:100vh;
+}
+
+.sidebar{
+  width:280px;
+  background:#111;
+  border-right:1px solid rgba(212,175,55,.15);
+  padding:2rem 1.5rem;
+  display:flex;
+  flex-direction:column;
+}
+
+.sidebar-brand{
+  margin-bottom:2.5rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.sidebar-logo{
+  width:56px;
+  height:56px;
+  object-fit:contain;
+  margin-bottom:1rem;
+}
+
+.sidebar h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;
+  font-weight:400;
+  color:#fff;
+  margin-bottom:.4rem;
+}
+
+.sidebar h2 span{
+  color:#d4af37;
+}
+
+.sidebar-brand > p{
+  color:#888;
+  font-size:.78rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.sidebar-nav{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  flex:1;
+}
+
+.sidebar-link{
+  color:#bbb;
+  text-decoration:none;
+  padding:.85rem 1rem;
+  border-radius:12px;
+  font-size:.88rem;
+  transition:.3s;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active{
+  background:rgba(212,175,55,.1);
+  color:#d4af37;
+}
+
+.sidebar-footer{
+  padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.sidebar-footer p{
+  color:#666;
+  font-size:.78rem;
+}
+
+.main-content{
+  flex:1;
+  padding:2.5rem;
+  overflow-x:hidden;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:2.5rem;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+
+.topbar h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;
+  font-weight:400;
+  color:#fff;
+}
+
+.topbar-sub{
+  color:#888;
+  margin-top:.4rem;
+  font-size:.9rem;
+}
+
+.logout-btn{
+  border:none;
+  background:#d4af37;
+  color:#111;
+  padding:.8rem 1.6rem;
+  border-radius:40px;
+  font-family:'Jost',sans-serif;
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.3s;
+  flex-shrink:0;
+}
+
+.logout-btn:hover{
+  background:#f1cc5d;
+  transform:translateY(-2px);
+}
+
+.booking-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:1.5rem;
+}
+
+.loading-state,
+.empty-state{
+  grid-column:1/-1;
+  text-align:center;
+  padding:4rem 2rem;
+  color:#888;
+  border:1px dashed rgba(212,175,55,.2);
+  border-radius:20px;
+  background:rgba(255,255,255,.02);
+}
+
+.booking-card{
+  background:#161616;
+  border:1px solid rgba(212,175,55,.12);
+  border-radius:20px;
+  padding:1.6rem;
+  transition:.3s;
+}
+
+.booking-card:hover{
+  border-color:rgba(212,175,55,.3);
+  transform:translateY(-3px);
+}
+
+.booking-card h3{
+  font-family:'Cormorant Garamond',serif;
+  color:#d4af37;
+  font-size:1.4rem;
+  font-weight:400;
+  margin-bottom:1rem;
+}
+
+.booking-row{
+  margin-bottom:.75rem;
+  color:#ddd;
+  font-size:.88rem;
+}
+
+.booking-row span{
+  color:#888;
+}
+
+.delete-btn{
+  margin-top:1rem;
+  background:transparent;
+  color:#ff9090;
+  border:1px solid rgba(255,144,144,.3);
+  padding:.75rem 1.4rem;
+  border-radius:40px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:.78rem;
+  transition:.3s;
+  width:100%;
+}
+
+.delete-btn:hover{
+  background:rgba(150,35,35,.2);
+  border-color:#ff9090;
+}
+
+.status-badge{
+  padding:.35rem .9rem;
+  border-radius:30px;
+  font-size:.75rem;
+  font-weight:600;
+  margin-left:.5rem;
+  display:inline-block;
+}
+
+.pending{ background:#5c4700; color:#ffd86b; }
+.confirmed{ background:#003f2a; color:#4cffb0; }
+.completed{ background:#123d63; color:#77c9ff; }
+.cancelled{ background:#5a1010; color:#ff9090; }
+
+.status-actions{
+  display:flex;
+  gap:.6rem;
+  margin-top:1rem;
+  flex-wrap:wrap;
+}
+
+.status-btn{
+  border:none;
+  padding:.65rem 1rem;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:.75rem;
+  transition:.3s;
+  flex:1;
+  min-width:90px;
+}
+
+.status-btn:hover{ transform:translateY(-2px); }
+.confirm-btn{ background:#1e7d50; color:#fff; }
+.complete-btn{ background:#2f6ea3; color:#fff; }
+.cancel-btn{ background:#962323; color:#fff; }
+
+@media(max-width:900px){
+  .admin-wrap{ flex-direction:column; }
+  .sidebar{
+    width:100%;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:1rem;
+    padding:1.25rem;
+  }
+  .sidebar-brand{
+    margin-bottom:0;
+    padding-bottom:0;
+    border-bottom:none;
+    flex:1;
+  }
+  .sidebar-nav{ flex-direction:row; flex-wrap:wrap; }
+  .sidebar-footer{ display:none; }
+  .main-content{ padding:1.5rem; }
+}

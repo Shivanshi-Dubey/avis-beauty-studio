@@ -1,0 +1,268 @@
+<!-- ============================================================
+     AVI'S BEAUTY STUDIO — components/booking-modal.html
+     Booking modal markup — included via fetch() in index.html
+     ============================================================ -->
+
+     <div class="overlay" id="overlay">
+        <div class="modal" id="modal">
+      
+          <!-- Header -->
+          <div class="modal-hd">
+            <h2>Book an <em>Appointment</em></h2>
+            <button class="modal-close" onclick="closeModal()">✕</button>
+          </div>
+      
+          <!-- Main body (steps) -->
+          <div id="mainBody">
+            <div class="modal-bd">
+      
+              <!-- Stepper -->
+              <div class="stepper">
+                <div class="stp active" id="stp1">Service</div>
+                <div class="stp"        id="stp2">Date &amp; Time</div>
+                <div class="stp"        id="stp3">Your Details</div>
+                <div class="stp"        id="stp4">Payment</div>
+              </div>
+      
+              <!-- ── PAGE 1 : Service & Staff ── -->
+              <div class="pg show" id="pg1">
+                <p style="font-size:.8rem;color:var(--text-mid);margin-bottom:1.2rem;">Select your service(s):</p>
+      
+                <div class="svc-pick">
+                  <div class="svc-opt" onclick="toggleSvc(this,'Hair Services')">
+                    <div class="svc-chk"></div>
+                    <div><div class="svc-opt-name">Hair Services</div><div class="svc-opt-price">From $199</div></div>
+                  </div>
+                  <div class="svc-opt" onclick="toggleSvc(this,'Skin Care')">
+                    <div class="svc-chk"></div>
+                    <div><div class="svc-opt-name">Skin Care</div><div class="svc-opt-price">From $399</div></div>
+                  </div>
+                  <div class="svc-opt" onclick="toggleSvc(this,'Makeup')">
+                    <div class="svc-chk"></div>
+                    <div><div class="svc-opt-name">Makeup</div><div class="svc-opt-price">From $499</div></div>
+                  </div>
+                  <div class="svc-opt" onclick="toggleSvc(this,'Nails')">
+                    <div class="svc-chk"></div>
+                    <div><div class="svc-opt-name">Nails</div><div class="svc-opt-price">From $349</div></div>
+                  </div>
+                  <div class="svc-opt" onclick="toggleSvc(this,'Laser Services')">
+                    <div class="svc-chk"></div>
+                    <div><div class="svc-opt-name">Laser Services</div><div class="svc-opt-price">From $999</div></div>
+                  </div>
+                  <div class="svc-opt" onclick="toggleSvc(this,'Waxing &amp; Threading')">
+                    <div class="svc-chk"></div>
+                    <div><div class="svc-opt-name">Waxing &amp; Threading</div><div class="svc-opt-price">From $29</div></div>
+                  </div>
+                </div>
+      
+                <p style="font-size:.8rem;color:var(--text-mid);margin:1.8rem 0 .9rem;">Choose your stylist:</p>
+      
+                <div class="staff-grid">
+                  <div class="staff-c" onclick="pickStaff(this,'Avni Singh')">
+                    <div class="staff-av">AS</div>
+                    <div class="staff-nm">Avni Singh</div>
+                    <div class="staff-rl">Senior Stylist</div>
+                  </div>
+                  <div class="staff-c" onclick="pickStaff(this,'Priya Sharma')">
+                    <div class="staff-av">PS</div>
+                    <div class="staff-nm">Priya Sharma</div>
+                    <div class="staff-rl">Makeup Artist</div>
+                  </div>
+                  <div class="staff-c" onclick="pickStaff(this,'Rahul Verma')">
+                    <div class="staff-av">RV</div>
+                    <div class="staff-nm">Rahul Verma</div>
+                    <div class="staff-rl">Hair Expert</div>
+                  </div>
+                  <div class="staff-c" onclick="pickStaff(this,'Neha Patel')">
+                    <div class="staff-av">NP</div>
+                    <div class="staff-nm">Neha Patel</div>
+                    <div class="staff-rl">Skin Specialist</div>
+                  </div>
+                  <div class="staff-c" onclick="pickStaff(this,'Komal Jain')">
+                    <div class="staff-av">KJ</div>
+                    <div class="staff-nm">Komal Jain</div>
+                    <div class="staff-rl">Nail Artist</div>
+                  </div>
+                  <div class="staff-c" onclick="pickStaff(this,'Any Available')">
+                    <div class="staff-av" style="font-size:1.3rem;background:rgba(200,169,126,.15);">✦</div>
+                    <div class="staff-nm">Any Available</div>
+                    <div class="staff-rl">Best match</div>
+                  </div>
+                </div>
+      
+                <div class="m-nav">
+                  <span></span>
+                  <button class="btn-nxt" onclick="validateStep1()">Next →</button>
+                </div>
+              </div>
+      
+              <!-- ── PAGE 2 : Date & Time ── -->
+              <div class="pg" id="pg2">
+                <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mid);margin-bottom:1rem;">Select Date</p>
+                <div class="date-strip" id="dateStrip"></div>
+      
+                <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mid);margin-bottom:.8rem;">Select Time Slot</p>
+                <div class="time-grid" id="timeGrid"></div>
+                <p style="font-size:.7rem;color:var(--text-light);margin-top:.8rem;">⚪ Strikethrough = unavailable · Tap to select your preferred slot</p>
+      
+                <div class="m-nav">
+                  <button class="btn-back" onclick="validateStep1()">← Back</button>
+                  <button class="btn-nxt"  onclick="validateStep2()">Next →</button>
+                </div>
+              </div>
+      
+              <!-- ── PAGE 3 : Your Details ── -->
+              <div class="pg" id="pg3">
+                <div class="f-row2">
+                  <div class="f-group">
+                    <label class="f-lbl">First Name</label>
+                    <input type="text" class="f-in" id="fname" placeholder="First name">
+                  </div>
+                  <div class="f-group">
+                    <label class="f-lbl">Last Name</label>
+                    <input type="text" class="f-in" id="lname" placeholder="Last name">
+                  </div>
+                </div>
+                <div class="f-group">
+                  <label class="f-lbl">Mobile Number</label>
+                  <input type="tel" class="f-in" id="phone" placeholder="+1 XXX XXX XXX">
+                </div>
+                <div class="f-group">
+                  <label class="f-lbl">Email Address</label>
+                  <input type="email" class="f-in" id="email" placeholder="Confirmation will be sent here">
+                </div>
+                <div class="f-group">
+                  <label class="f-lbl">Special Request (optional)</label>
+                  <input type="text" class="f-in" id="note" placeholder="Any note for your stylist...">
+                </div>
+      
+                <div class="m-nav">
+                  <button class="btn-back" onclick="validateStep2()">← Back</button>
+                  <button class="btn-nxt"  onclick="validateStep3()">Next →</button>
+                </div>
+              </div>
+      
+              <!-- ── PAGE 4 : Payment ── -->
+              <div class="pg" id="pg4">
+      
+                <!-- Booking summary -->
+                <div class="summary" id="summaryBox"></div>
+      
+                <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mid);margin-bottom:1rem;">Select Payment Method</p>
+      
+                <div class="pay-opts">
+                  <div class="pay-opt" onclick="pickPay(this,'upi')">
+                    <div class="pay-radio"></div>
+                    <div class="pay-info">
+                      <label>UPI Payment</label>
+                      <p>Google Pay · PhonePe · Paytm · BHIM</p>
+                    </div>
+                    <div class="pay-logo">
+                      <span class="pay-badge">GPay</span>
+                      <span class="pay-badge">PhonePe</span>
+                    </div>
+                  </div>
+                  <div class="pay-opt" onclick="pickPay(this,'card')">
+                    <div class="pay-radio"></div>
+                    <div class="pay-info">
+                      <label>Debit / Credit Card</label>
+                      <p>Visa · Mastercard · RuPay</p>
+                    </div>
+                    <div class="pay-logo">
+                      <span class="pay-badge">VISA</span>
+                      <span class="pay-badge">MC</span>
+                    </div>
+                  </div>
+                  <div class="pay-opt" onclick="pickPay(this,'netbanking')">
+                    <div class="pay-radio"></div>
+                    <div class="pay-info">
+                      <label>Net Banking</label>
+                      <p>All major Indian banks</p>
+                    </div>
+                    <div class="pay-logo"><span class="pay-badge">Bank</span></div>
+                  </div>
+                </div>
+      
+                <!-- UPI fields -->
+                <div class="extra-fields" id="upiFields">
+                  <div class="f-group">
+                    <label class="f-lbl">UPI ID</label>
+                    <input type="text" class="f-in" placeholder="yourname@upi" id="upiId">
+                  </div>
+                </div>
+      
+                <!-- Card fields -->
+                <div class="extra-fields" id="cardFields">
+                  <div class="f-group">
+                    <label class="f-lbl">Card Number</label>
+                    <input type="text" class="f-in" id="cardNum" placeholder="XXXX  XXXX  XXXX  XXXX" maxlength="19" oninput="fmtCard(this)">
+                  </div>
+                  <div class="f-row2">
+                    <div class="f-group">
+                      <label class="f-lbl">Expiry</label>
+                      <input type="text" class="f-in" placeholder="MM / YY" maxlength="7" oninput="fmtExpiry(this)">
+                    </div>
+                    <div class="f-group">
+                      <label class="f-lbl">CVV</label>
+                      <input type="text" class="f-in" placeholder="•••" maxlength="3">
+                    </div>
+                  </div>
+                  <div class="f-group">
+                    <label class="f-lbl">Name on Card</label>
+                    <input type="text" class="f-in" placeholder="As printed on card">
+                  </div>
+                </div>
+      
+                <!-- Net banking fields -->
+                <div class="extra-fields" id="nbFields">
+                  <div class="f-group">
+                    <label class="f-lbl">Select Bank</label>
+                    <select class="f-in" style="appearance:none;">
+                      <option value="">-- Select your bank --</option>
+                      <option>State Bank of India</option>
+                      <option>HDFC Bank</option>
+                      <option>ICICI Bank</option>
+                      <option>Axis Bank</option>
+                      <option>Punjab National Bank</option>
+                      <option>Bank of Baroda</option>
+                      <option>Kotak Mahindra Bank</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+      
+                <div class="secure-note">100% secure payment · Your data is encrypted and safe</div>
+      
+                <div class="m-nav">
+                  <button class="btn-back"    onclick="validateStep3()">← Back</button>
+                  <button class="btn-pay-now" onclick="processPayment()">Pay $200 &amp; Confirm ✦</button>
+                </div>
+              </div>
+      
+            </div><!-- /modal-bd -->
+          </div><!-- /mainBody -->
+      
+          <!-- Processing spinner -->
+          <div class="processing" id="processing">
+            <div class="spinner"></div>
+            <p style="font-size:.88rem;color:var(--text-mid);font-weight:300;">Processing your payment securely…</p>
+          </div>
+      
+          <!-- Success screen -->
+          <div class="success" id="successView">
+            <div class="succ-ring">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#c9a84c" stroke-width="2">
+                <polyline points="8,18 15,25 28,11"/>
+              </svg>
+            </div>
+            <h2>Booking Confirmed!</h2>
+            <p>Thank you for choosing <strong>Avi's Beauty Studio</strong>.<br>
+               Your appointment is confirmed. A confirmation SMS &amp; email has been sent to you.</p>
+            <div class="booking-ref" id="bkRef"></div>
+            <p style="font-size:.82rem;margin-top:.5rem;">See you soon! For any queries, call us on <strong>+91 XXXXX XXXXX</strong></p>
+            <button class="btn-gold" style="margin-top:2rem;" onclick="closeModal()">Done ✓</button>
+          </div>
+      
+        </div><!-- /modal -->
+      </div><!-- /overlay -->
+      

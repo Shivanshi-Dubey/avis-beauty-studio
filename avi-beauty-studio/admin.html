@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage appointments at Avi's Beauty Studio.">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>Admin Dashboard – Avi's Beauty Studio</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="admin-wrap">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="logo.png" alt="Avi's Beauty Studio" class="sidebar-logo">
+      <h2>Avi's <span>Beauty</span> Studio</h2>
+      <p>Admin Dashboard</p>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="admin.html" class="sidebar-link active">Appointments</a>
+      <a href="index.html" class="sidebar-link">View Website</a>
+    </nav>
+    <div class="sidebar-footer">
+      <p>Belle River, Ontario</p>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <div class="topbar">
+      <div>
+        <h1>Appointment Bookings</h1>
+        <p class="topbar-sub">Manage, confirm and track all client appointments</p>
+      </div>
+      <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+    </div>
+
+    <div id="bookingContainer" class="booking-grid">
+      <div class="loading-state">Loading bookings...</div>
+    </div>
+
+  </main>
+
+</div>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

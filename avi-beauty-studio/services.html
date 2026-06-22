@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the full service menu at Avi's Beauty Studio — hair, beauty, makeup, barber, waxing and laser treatments in Belle River, Ontario.">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>Services – Avi's Beauty Studio</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">
+    <img src="logo.png" class="logo-icon" alt="Avi's Beauty Studio Logo">
+    <span class="logo-text">Avi's <b>Beauty</b> Studio</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="services.html">All Services</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
+    <li><a href="index.html#laser">Laser</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#testimonials">Reviews</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta-links">
+    <a href="index.html?book=1" class="nav-book">Book Now</a>
+    <a href="https://www.facebook.com/avisbeautystudio" class="nav-book nav-book-social" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://www.instagram.com/avisbeautystudio/" class="nav-book nav-book-social" target="_blank" rel="noopener noreferrer">Instagram</a>
+  </div>
+  <button class="hamburger" id="ham" onclick="toggleNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="hero small-hero">
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1600&q=85')"></div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-tag">Premium Salon Services</div>
+    <h1>Our Signature <br><em>Beauty</em> Services</h1>
+    <p class="hero-sub">
+      Professional haircare, skincare, waxing, makeup artistry and laser treatments
+      in Belle River, Ontario — tailored for men and women.
+    </p>
+    <div class="hero-btns">
+      <a href="index.html?book=1" class="btn-gold">Book Appointment</a>
+      <a href="index.html#contact" class="btn-ghost">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="svc-header">
+    <div>
+      <div class="sec-tag">What We Offer</div>
+      <h2 class="sec-title">Explore Our <em>Services</em></h2>
+    </div>
+    <p class="sec-lead">
+      Every treatment is performed by trained specialists using premium products
+      and modern salon technology. Prices shown are starting rates.
+    </p>
+  </div>
+
+  <div class="svc-grid">
+
+    <div class="svc-card">
+      <div class="svc-num">01</div>
+      <h3>Hair Salon</h3>
+      <p>Luxury haircare including coloring, balayage, keratin, hydration and styling for all hair types.</p>
+      <div class="svc-list">
+        <div class="svc-row"><span>Haircut – Ladies</span><span>$399+</span></div>
+        <div class="svc-row"><span>Haircut – Gents</span><span>$199+</span></div>
+        <div class="svc-row"><span>Hair Colour</span><span>$799+</span></div>
+        <div class="svc-row"><span>Balayage</span><span>$1,299+</span></div>
+        <div class="svc-row"><span>Keratin Treatment</span><span>$2,499+</span></div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-num">02</div>
+      <h3>Beauty Salon</h3>
+      <p>Premium beauty services for glowing skin, waxing, facials and bridal preparation.</p>
+      <div class="svc-list">
+        <div class="svc-row"><span>Basic Facial</span><span>$599+</span></div>
+        <div class="svc-row"><span>Gold / Pearl Facial</span><span>$1,299+</span></div>
+        <div class="svc-row"><span>Eyebrow Shaping</span><span>$49+</span></div>
+        <div class="svc-row"><span>Brazilian Waxing</span><span>$899+</span></div>
+        <div class="svc-row"><span>Bridal Services</span><span>$4,999+</span></div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-num">03</div>
+      <h3>Make-up Artist</h3>
+      <p>Professional bridal, editorial and special occasion makeup by certified artists.</p>
+      <div class="svc-list">
+        <div class="svc-row"><span>Party Makeup</span><span>$1,499+</span></div>
+        <div class="svc-row"><span>Bridal Makeup</span><span>$4,999+</span></div>
+        <div class="svc-row"><span>Airbrush Makeup</span><span>$2,999+</span></div>
+        <div class="svc-row"><span>Photography Makeup</span><span>$2,499+</span></div>
+        <div class="svc-row"><span>Makeup Lessons</span><span>$1,499+</span></div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-num">04</div>
+      <h3>Barber Shop</h3>
+      <p>Modern grooming and hairstyling for men with a premium salon experience.</p>
+      <div class="svc-list">
+        <div class="svc-row"><span>Beard Trim</span><span>$199+</span></div>
+        <div class="svc-row"><span>Hair Styling</span><span>$299+</span></div>
+        <div class="svc-row"><span>Hair Wash</span><span>$149+</span></div>
+        <div class="svc-row"><span>Beard Perm</span><span>$499+</span></div>
+        <div class="svc-row"><span>Shampoo &amp; Conditioning</span><span>$199+</span></div>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-num">05</div>
+      <h3>Nails &amp; Waxing</h3>
+      <p>Manicure, pedicure, nail art and full-body waxing with premium products.</p>
+      <div class="svc-list">
+        <div class="svc-row"><span>Basic Manicure</span><span>$349+</span></div>
+        <div class="svc-row"><span>Gel Manicure</span><span>$699+</span></div>
+        <div class="svc-row"><span>Full Leg Wax</span><span>$499+</span></div>
+        <div class="svc-row"><span>Full Body Wax</span><span>$1,299+</span></div>
+        <div class="svc-row"><span>Eyebrow Threading</span><span>$49+</span></div>
+      </div>
+    </div>
+
+    <div class="svc-card svc-card-dark">
+      <div class="svc-num" style="color:rgba(200,169,126,.12);">06</div>
+      <h3 style="color:#fff;">Laser Treatments</h3>
+      <p style="color:var(--text-on-dark);">Certified advanced laser technology for hair removal and skin rejuvenation.</p>
+      <div class="svc-list" style="border-color:rgba(200,169,126,.12);">
+        <div class="svc-row" style="color:var(--text-on-dark);"><span>Laser Hair Removal</span><span style="color:var(--gold);">$999+</span></div>
+        <div class="svc-row" style="color:var(--text-on-dark);"><span>Full Body – Ladies</span><span style="color:var(--gold);">$7,999+</span></div>
+        <div class="svc-row" style="color:var(--text-on-dark);"><span>Skin Resurfacing</span><span style="color:var(--gold);">$2,999+</span></div>
+        <div class="svc-row" style="color:var(--text-on-dark);"><span>Free Consultation</span><span style="color:var(--gold);">Free</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec cta-sec">
+  <div class="cta-inner">
+    <div>
+      <div class="sec-tag">Ready to Glow?</div>
+      <h2 class="sec-title">Book Your <em>Appointment</em></h2>
+      <p class="sec-lead">Schedule online or reach us directly — our team is ready to welcome you.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="index.html?book=1" class="btn-gold">Book Online</a>
+      <a href="tel:+16477176747" class="btn-ghost">Call +1 647-717-6747</a>
+    </div>
+  </div>
+</section>
+
+<footer class="premium-footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Avi's <span>Beauty</span> Studio</h3>
+      <p>Premium unisex salon in Belle River, Ontario. Hair, beauty, laser, facials, waxing and bridal services.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/avisbeautystudio" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/avisbeautystudio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://wa.me/16477176747" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#services">Hair Styling</a></li>
+        <li><a href="index.html#services">Skin &amp; Facials</a></li>
+        <li><a href="index.html#laser">Laser Hair Removal</a></li>
+        <li><a href="services.html">View All Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p><a href="tel:+16477176747">+1 647-717-6747</a></p>
+      <p>556 Notre Dame Street<br>Belle River, ON N0R 1A0</p>
+      <p><a href="mailto:avisbeautystudio@gmail.com">avisbeautystudio@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Avi's Beauty Studio. All Rights Reserved.</div>
+</footer>
+
+<a href="https://wa.me/16477176747" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">💬</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>

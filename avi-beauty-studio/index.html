@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Avi's Beauty Studio — premium unisex salon in Belle River, Ontario. Hair, skin, nails, makeup, laser treatments & bridal services. Book your appointment today.">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>Avi's Beauty Studio – Unisex Salon, Ontario</title>
+  <link rel="icon" href="logo.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="lux-loader" id="luxLoader">
+
+    <div class="loader-inner">
+  
+      <div class="loader-logo">
+        Avi's <span>Beauty</span> Studio
+      </div>
+  
+      <div class="loader-line"></div>
+  
+      <p class="loader-text">
+        Luxury Beauty Experience
+      </p>
+  
+    </div>
+  
+  </div>
+
+<!-- ═══════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#home" class="logo">
+    <img src="logo.png" class="logo-icon" alt="Avi's Beauty Studio Logo">
+    <span class="logo-text">Avi's <b>Beauty</b> Studio</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#laser">Laser</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta-links">
+    <div class="nav-socials">
+      <a href="https://www.facebook.com/avisbeautystudio" class="nav-social" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/avisbeautystudio/" class="nav-social" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+    </div>
+    <button type="button" class="nav-book" onclick="openModal()">Book Now</button>
+  </div>
+  <button class="hamburger" id="ham" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-slides" id="slides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=85')"></div>
+    <div class="hero-slide"        style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1600&q=85')"></div>
+    <div class="hero-slide"        style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1600&q=85')"></div>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-eyebrow">
+      <span class="hero-tag">Premium Unisex Salon</span>
+      <span class="hero-location">Belle River, Ontario</span>
+    </div>
+    <h1>Where <em>Beauty</em><br>Meets Artistry</h1>
+    <p class="hero-sub">Expert hair, skin, nails, makeup &amp; laser treatments — crafted with precision for men and women who deserve the finest salon experience.</p>
+    <div class="hero-btns">
+      <button class="btn-gold" onclick="openModal()">Book Now</button>
+      <a href="#services" class="btn-ghost">Explore Services</a>
+      <a href="tel:+16477176747" class="btn-ghost btn-phone">+1 647-717-6747</a>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="slide-dots" id="dots">
+      <div class="dot active" onclick="goSlide(0)" aria-label="Slide 1"></div>
+      <div class="dot" onclick="goSlide(1)" aria-label="Slide 2"></div>
+      <div class="dot" onclick="goSlide(2)" aria-label="Slide 3"></div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-lbl">Happy Clients</div>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <div class="stat-num">12+</div>
+        <div class="stat-lbl">Expert Staff</div>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <div class="stat-num">8+</div>
+        <div class="stat-lbl">Years of Excellence</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#services" class="hero-scroll" aria-label="Scroll to services">
+    <span>Discover</span>
+    <div class="scroll-line"></div>
+  </a>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SERVICES
+════════════════════════════════════════ -->
+<section class="sec" id="services">
+  <div class="svc-header">
+    <div>
+      <div class="sec-tag">What We Offer</div>
+      <h2 class="sec-title">Our <em>Signature</em><br>Services</h2>
+    </div>
+    <p class="sec-lead">From precision cuts to advanced laser sessions — every treatment is performed by certified specialists.</p>
+  </div>
+
+  <div class="svc-grid">
+    <!-- 01 Hair -->
+    <div class="svc-card">
+      <div class="svc-num">01</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#c9a84c" stroke-width="1.5">
+          <path d="M16 4C10 4 7 9 8.5 15C10 20 13 23 16 28C19 23 22 20 23.5 15C25 9 22 4 16 4Z"/>
+          <path d="M11 14Q16 10 21 14"/>
+        </svg>
+      </div>
+      <h3>Hair Services</h3>
+      <p>Precision cuts, global colour, highlights, balayage, keratin smoothening and more for all hair types.</p>
+      <div class="svc-list">
+        <div class="svc-row"><span>Haircut – Ladies</span><span>$399+</span></div>
+        <div class="svc-row"><span>Haircut – Gents</span><span>$199+</span></div>
+        <div class="svc-row"><span>Hair Colour</span><span>$799+</span></div>
+        <div class="svc-row"><span>Keratin Treatment</span><span>$2,499+</span></div>
+      </div>
+    </div>
+
+    <!-- 02 Skin -->
+    <div class="svc-card">
+      <div class="svc-num">02</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#c9a84c" stroke-width="1.5">
+          <circle cx="16" cy="13" r="7"/>
+          <path d="M9 26Q16 20 23 26"/>
+          <path d="M13 9Q16 7 19 9"/>
+        </svg>
+      </div>
+      <h3>Skin Care</h3>
+      <p>Facials, clean-ups, de-tan, bleach, gold treatments and advanced skin rejuvenation therapies.</p>
+      <div class="svc-list">
+        <div class="svc-row"><span>Basic Facial</span><span>$599+</span></div>
+        <div class="svc-row"><span>Gold / Pearl Facial</span><span>$1,299+</span></div>
+        <div class="svc-row"><span>De-tan Treatment</span><span>$799+</span></div>
+        <div class="svc-row"><span>Clean-up</span><span>$399+</span></div>
+      </div>
+    </div>
+
+    <!-- 03 Makeup -->
+    <div class="svc-card">
+      <div class="svc-num">03</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#c9a84c" stroke-width="1.5">
+          <path d="M10 8Q16 4 22 8L20 24Q16 28 12 24Z"/>
+          <path d="M12 14Q16 12 20 14"/>
+          <path d="M12 18Q16 16 20 18"/>
+        </svg>
+      </div>
+      <h3>Makeup</h3>
+      <p>Bridal, party &amp; editorial makeup by certified artists using top international brands.</p>
+      <div class="svc-list">
+        <div class="svc-row"><span>Party Makeup</span><span>$1,499+</span></div>
+        <div class="svc-row"><span>Bridal Makeup</span><span>$4,999+</span></div>
+        <div class="svc-row"><span>Airbrush Makeup</span><span>$2,999+</span></div>
+        <div class="svc-row"><span>Eye Makeup</span><span>$499+</span></div>
+      </div>
+    </div>
+
+    <!-- 04 Nails -->
+    <div class="svc-card">
+      <div class="svc-num">04</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#c9a84c" stroke-width="1.5">
+          <path d="M8 26L16 6L24 26"/>
+          <path d="M11 18L21 18"/>
+          <path d="M6 26L26 26"/>
+        </svg>
+      </div>
+      <h3>Nails</h3>
+      <p>Manicure, pedicure, gel extensions and intricate nail art by skilled nail technicians.</p>
+      <div class="svc-list">
+        <div class="svc-row"><span>Basic Manicure</span><span>$349+</span></div>
+        <div class="svc-row"><span>Gel Manicure</span><span>$699+</span></div>
+        <div class="svc-row"><span>Nail Extensions</span><span>$1,299+</span></div>
+        <div class="svc-row"><span>Pedicure</span><span>$499+</span></div>
+      </div>
+    </div>
+
+    <!-- 05 Waxing -->
+    <div class="svc-card">
+      <div class="svc-num">05</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#c9a84c" stroke-width="1.5">
+          <rect x="8" y="12" width="16" height="14" rx="2"/>
+          <path d="M12 12L12 9Q16 6 20 9L20 12"/>
+          <line x1="12" y1="19" x2="20" y2="19"/>
+        </svg>
+      </div>
+      <h3>Waxing &amp; Threading</h3>
+      <p>Full-body waxing with premium wax &amp; precision threading for eyebrows and face.</p>
+      <div class="svc-list">
+        <div class="svc-row"><span>Full Leg Wax</span><span>$499+</span></div>
+        <div class="svc-row"><span>Full Body Wax</span><span>$1,299+</span></div>
+        <div class="svc-row"><span>Eyebrow Threading</span><span>$49+</span></div>
+        <div class="svc-row"><span>Upper Lip</span><span>$29+</span></div>
+      </div>
+    </div>
+
+    <!-- 06 Laser (dark card) -->
+    <div class="svc-card svc-card-dark">
+      <div class="svc-num" style="color:rgba(200,169,126,.12);">06</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#c9a84c" stroke-width="1.5">
+          <circle cx="16" cy="16" r="6"/>
+          <line x1="16" y1="2"    x2="16" y2="7"/>
+          <line x1="16" y1="25"   x2="16" y2="30"/>
+          <line x1="2"  y1="16"   x2="7"  y2="16"/>
+          <line x1="25" y1="16"   x2="30" y2="16"/>
+          <line x1="6.4"  y1="6.4"  x2="9.8"  y2="9.8"/>
+          <line x1="22.2" y1="22.2" x2="25.6" y2="25.6"/>
+          <line x1="6.4"  y1="25.6" x2="9.8"  y2="22.2"/>
+          <line x1="22.2" y1="9.8"  x2="25.6" y2="6.4"/>
+        </svg>
+      </div>
+      <h3 style="color:#fff;">Laser Services</h3>
+      <p style="color:var(--text-on-dark);">Advanced laser hair removal &amp; skin treatments with certified technology and expert care.</p>
+      <div class="svc-list" style="border-color:rgba(200,169,126,.12);">
+        <div class="svc-row" style="color:var(--text-on-dark);border-color:rgba(200,169,126,.07);"><span>Laser Hair Removal</span><span style="color:var(--gold);">$999+</span></div>
+        <div class="svc-row" style="color:var(--text-on-dark);border-color:rgba(200,169,126,.07);"><span>Full Body – Ladies</span><span style="color:var(--gold);">$7,999+</span></div>
+        <div class="svc-row" style="color:var(--text-on-dark);border-color:rgba(200,169,126,.07);"><span>Skin Resurfacing</span><span style="color:var(--gold);">$2,999+</span></div>
+        <div class="svc-row" style="color:var(--text-on-dark);border-color:rgba(200,169,126,.07);"><span>Free Consultation</span><span style="color:var(--gold);">Free</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════
+     PREMIUM DEALS
+════════════════════════════════════════ -->
+<section class="sec deals-sec" id="packages">
+
+  <div class="svc-header">
+    <div>
+      <div class="sec-tag">Exclusive Packages</div>
+      <h2 class="sec-title">Luxury <em>Beauty</em><br>Deals</h2>
+    </div>
+
+    <p class="sec-lead">
+      Special salon combinations designed for complete beauty care,
+      relaxation and premium self-care experience.
+    </p>
+  </div>
+
+  <div class="deals-grid">
+
+    <!-- SILVER -->
+    <div class="deal-card silver">
+
+      <div class="deal-badge">Silver Deal</div>
+
+      <h3>Glow Essentials</h3>
+
+      <ul class="deal-list">
+        <li>Face Wax + Arms + Underarms</li>
+        <li>Leg Wax + Eyebrow Threading</li>
+        <li>Haircut + Beard Trim + Hair Wash</li>
+      </ul>
+
+      <div class="deal-price">
+        <span class="new-price">$80</span>
+        <span class="old-price">$93</span>
+      </div>
+
+      <button class="btn-gold"
+        onclick="openModal()">
+        Book Package
+      </button>
+
+    </div>
+
+    <!-- GOLD -->
+    <div class="deal-card gold">
+
+      <div class="deal-badge">Gold Deal</div>
+
+      <h3>Luxury Hair Spa</h3>
+
+      <ul class="deal-list">
+        <li>Hair Wash + Haircut + Styling</li>
+        <li>Hair Spa + Shoulder Massage</li>
+        <li>Premium Blow Dry Finish</li>
+      </ul>
+
+      <div class="deal-price">
+        <span class="new-price">$45</span>
+        <span class="old-price">$75</span>
+      </div>
+
+      <button class="btn-gold"
+        onclick="openModal()">
+        Book Package
+      </button>
+
+    </div>
+
+    <!-- DIAMOND -->
+    <div class="deal-card diamond">
+
+      <div class="deal-badge">Diamond Deal</div>
+
+      <h3>Radiance Therapy</h3>
+
+      <ul class="deal-list">
+        <li>Hydra Facial + Face Bleach</li>
+        <li>Full Body Wax + Face Wax</li>
+        <li>Luxury Skin Glow Treatment</li>
+      </ul>
+
+      <div class="deal-price">
+        <span class="new-price">$99</span>
+        <span class="old-price">$150</span>
+      </div>
+
+      <button class="btn-gold"
+        onclick="openModal()">
+        Book Package
+      </button>
+
+    </div>
+
+    <!-- PLATINUM -->
+    <div class="deal-card platinum">
+
+      <div class="deal-badge">Platinum Deal</div>
+
+      <h3>Ultimate Makeover</h3>
+
+      <ul class="deal-list">
+        <li>Hydra Facial + Haircut + Styling</li>
+        <li>Full Body Wax + Face Bleach</li>
+        <li>Premium Hair Spa + Massage</li>
+      </ul>
+
+      <div class="deal-price">
+        <span class="new-price">$299</span>
+        <span class="old-price">$350</span>
+      </div>
+
+      <button class="btn-gold"
+        onclick="openModal()">
+        Book Package
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════
+     LASER SPOTLIGHT
+════════════════════════════════════════ -->
+<section id="laser">
+  <div class="laser-inner">
+    <div class="laser-text">
+      <div class="sec-tag">Advanced Technology</div>
+      <h2 class="sec-title">Laser Hair<br><em>Removal</em></h2>
+      <p class="sec-lead">Safe, effective and long-lasting results with our certified laser equipment — suitable for all skin types.</p>
+      <div class="laser-perks">
+        <div class="laser-perk"><div class="perk-dot"></div>FDA-approved laser equipment</div>
+        <div class="laser-perk"><div class="perk-dot"></div>Suitable for all skin tones</div>
+        <div class="laser-perk"><div class="perk-dot"></div>Minimal discomfort, maximum results</div>
+        <div class="laser-perk"><div class="perk-dot"></div>Certified laser technicians</div>
+        <div class="laser-perk"><div class="perk-dot"></div>Free consultation session</div>
+      </div>
+      <button class="btn-gold" style="margin-top:2rem;" onclick="openModal()">Book Laser Session</button>
+    </div>
+    <div class="laser-img"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════
+     ABOUT
+════════════════════════════════════════ -->
+<section class="sec about-sec" id="about">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="about-img"></div>
+      <div class="about-badge">Est. Belle River</div>
+    </div>
+    <div class="about-content">
+      <div class="sec-tag">Our Story</div>
+      <h2 class="sec-title">Where Passion<br>Meets <em>Precision</em></h2>
+      <p class="sec-lead">
+        Avi's Beauty Studio is a licensed premium unisex salon in the heart of Belle River, Ontario.
+        We combine international techniques with warm, personalized care — creating a luxury experience
+        for every guest who walks through our doors.
+      </p>
+      <div class="about-founder">
+        <div class="owner-tag">Founder &amp; Lead Stylist</div>
+        <h3>Raman Batth</h3>
+        <p>
+          With 21+ years of experience as a hairstylist, makeup artist and esthetician,
+          Raman Batth has built Avi's Beauty Studio into one of the region's most trusted
+          beauty destinations for hair, skin, laser and bridal services.
+        </p>
+      </div>
+      <div class="about-highlights">
+        <div class="about-highlight"><strong>21+</strong><span>Years Experience</span></div>
+        <div class="about-highlight"><strong>500+</strong><span>Happy Clients</span></div>
+        <div class="about-highlight"><strong>12+</strong><span>Expert Staff</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════
+     GALLERY
+════════════════════════════════════════ -->
+<section class="sec" id="gallery">
+  <div class="sec-tag">Our Work</div>
+  <h2 class="sec-title">Studio <em>Gallery</em></h2>
+  <div class="gallery-grid">
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80" alt="Makeup transformation" loading="lazy"></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Hair styling"          loading="lazy"></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80" alt="Nail art"              loading="lazy"></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Facial treatment"      loading="lazy"></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80" alt="Hair colour"             loading="lazy"></div>
+  </div>
+</section>
+
+<section class="insta-sec">
+
+  <div class="sec-tag">
+  Instagram
+  </div>
+  
+  <h2 class="sec-title">
+  Follow Our <em>Beauty</em> Journey
+  </h2>
+  
+  <div class="insta-grid">
+    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Salon interior" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Hair styling" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80" alt="Beauty treatment" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Skincare session" loading="lazy">
+  </div>
+  
+  <a
+  href="https://www.instagram.com/avisbeautystudio/"
+  target="_blank"
+  class="btn-gold">
+  
+  Follow On Instagram
+  
+  </a>
+  
+  </section>
+
+<!-- ═══════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
+<section class="sec" id="testimonials">
+  <div class="sec-tag">Client Love</div>
+  <h2 class="sec-title">What They <em>Say</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Absolutely the best salon experience. The staff is incredibly professional and my hair looks stunning after the keratin treatment.</p>
+      <div class="testi-name">Priya Malhotra</div>
+      <div class="testi-loc">Ontario, Canada</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Got my bridal makeup done here and it was flawless! The artist understood exactly what I wanted. Everyone was complimenting me all day.</p>
+      <div class="testi-name">Aarti Sharma</div>
+      <div class="testi-loc">Ontario, Canada</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">The laser hair removal sessions have been smooth and effective. Results are excellent after just 4 sessions. Very hygienic environment.</p>
+      <div class="testi-name">Rohit Dubey</div>
+      <div class="testi-loc">Ontario, Canada</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CONTACT
+════════════════════════════════════════ -->
+<section class="sec" id="contact">
+
+  <div class="contact-inner">
+
+    <!-- LEFT -->
+    <div>
+
+      <div class="sec-tag">Visit Our Studio</div>
+
+      <h2 class="sec-title">
+        Avi's <em>Beauty</em><br>
+        Studio
+      </h2>
+
+      <p class="sec-lead" style="margin-top:1rem;">
+        A premium licensed unisex salon in Belle River, Ontario
+        offering haircare, makeup artistry, waxing, facials,
+        laser treatments and bridal beauty services.
+      </p>
+
+      <div style="margin-top:2.5rem;">
+
+        <!-- ADDRESS -->
+        <div class="c-item">
+
+          <div class="c-icon">⌂</div>
+
+          <div>
+            <span class="c-label">Location</span>
+
+            <p class="c-val">
+              556 Notre Dame Street<br>
+              Belle River, Ontario N0R 1A0<br>
+              Canada
+            </p>
+          </div>
+
+        </div>
+
+        <!-- PHONE -->
+        <div class="c-item">
+
+          <div class="c-icon">✆</div>
+
+          <div>
+            <span class="c-label">Phone</span>
+
+            <p class="c-val">
+              <a href="tel:+16477176747">+1 647-717-6747</a>
+            </p>
+          </div>
+
+        </div>
+
+        <!-- EMAIL -->
+        <div class="c-item">
+
+          <div class="c-icon">✉</div>
+
+          <div>
+            <span class="c-label">Email</span>
+
+            <p class="c-val">
+              <a href="mailto:avisbeautystudio@gmail.com">avisbeautystudio@gmail.com</a>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hours-box">
+
+  <div class="hours-title">
+    Hours of Operation
+  </div>
+
+  <div class="hours-grid">
+
+    <div><span>Monday</span><strong>9 AM – 7 PM</strong></div>
+    <div><span>Tuesday</span><strong>9 AM – 7 PM</strong></div>
+    <div><span>Wednesday</span><strong>9 AM – 7 PM</strong></div>
+    <div><span>Thursday</span><strong>9 AM – 7 PM</strong></div>
+    <div><span>Friday</span><strong>9 AM – 7 PM</strong></div>
+    <div><span>Saturday</span><strong>9 AM – 7 PM</strong></div>
+    <div><span>Sunday</span><strong>9 AM – 7 PM</strong></div>
+
+  </div>
+
+</div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="c-form" id="contactForm">
+
+      <div class="f-group">
+        <label class="f-label" for="contactName">Your Name</label>
+        <input type="text" id="contactName" class="f-input" placeholder="Full name" required>
+      </div>
+
+      <div class="f-row">
+        <div class="f-group">
+          <label class="f-label" for="contactPhone">Phone</label>
+          <input type="tel" id="contactPhone" class="f-input" placeholder="+1 647 717 6747" required>
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="contactEmail">Email</label>
+          <input type="email" id="contactEmail" class="f-input" placeholder="your@email.com">
+        </div>
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="contactMessage">Message</label>
+        <textarea id="contactMessage" class="f-input" rows="5" placeholder="Tell us about your booking or beauty requirement..." required></textarea>
+      </div>
+
+      <button type="button" class="btn-gold" id="contactSubmit">Send Message</button>
+      <p class="c-form-note">Prefer to book instantly? <button type="button" class="link-btn" onclick="openModal()">Schedule online</button></p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="map-section" id="map">
+
+  <div class="sec-header sec">
+    <div class="sec-tag">
+      Visit Us
+    </div>
+
+    <h2 class="sec-title">
+      Find Our <em>Salon</em>
+    </h2>
+  </div>
+
+  <div class="map-wrap">
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5902.670425854891!2d-82.70972802196076!3d42.29271226241169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883ad3d0cc20c085%3A0x8782282a896a3a96!2sAvi%27s%20Beauty%20Studio!5e0!3m2!1sen!2sin!4v1779334666085!5m2!1sen!2sin"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="premium-footer">
+
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Avi's <span>Beauty</span> Studio</h3>
+      <p>
+        Premium unisex salon in Belle River, Ontario.
+        Hair, beauty, laser treatments, facials, waxing and bridal services — crafted with care.
+      </p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/avisbeautystudio" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/avisbeautystudio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://wa.me/16477176747" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Hair Styling</a></li>
+        <li><a href="#services">Skin &amp; Facials</a></li>
+        <li><a href="#laser">Laser Hair Removal</a></li>
+        <li><a href="#services">Waxing &amp; Threading</a></li>
+        <li><a href="#services">Bridal Makeup</a></li>
+        <li><a href="services.html">View All Services</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" onclick="openModal(); return false;">Book Appointment</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p><a href="tel:+16477176747">+1 647-717-6747</a></p>
+      <p>556 Notre Dame Street<br>Belle River, ON N0R 1A0</p>
+      <p><a href="mailto:avisbeautystudio@gmail.com">avisbeautystudio@gmail.com</a></p>
+      <p class="footer-hours">Open daily · 9 AM – 7 PM</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Avi's Beauty Studio. All Rights Reserved.
+  </div>
+
+</footer>
+
+<!-- ═══════════════════════════════════════
+     BOOKING MODAL
+════════════════════════════════════════ -->
+<div class="overlay" id="overlay">
+
+  <div class="modal">
+
+    <!-- CLOSE -->
+    <button class="modal-close"
+      onclick="closeModal()">
+      ×
+    </button>
+
+    <!-- MAIN -->
+    <div id="mainBody">
+
+      <!-- STEPPER -->
+      <div class="stepper">
+
+        <div class="step active" id="stp1">
+          <span>1</span>
+          <small>Services</small>
+        </div>
+
+        <div class="step" id="stp2">
+          <span>2</span>
+          <small>Date</small>
+        </div>
+
+        <div class="step" id="stp3">
+          <span>3</span>
+          <small>Details</small>
+        </div>
+
+        <div class="step" id="stp4">
+          <span>4</span>
+          <small>Payment</small>
+        </div>
+
+      </div>
+
+      <!-- PAGE 1 -->
+      <div class="pg show" id="pg1">
+
+        <h3>Select Services</h3>
+        <select id="serviceSelect" class="f-input" onchange="pickServiceFromDropdown(this)">
+          <option value="">Select a service</option>
+          <option value="Hair Coloring">Hair Coloring</option>
+          <option value="Hair Styling">Hair Styling</option>
+          <option value="Balayage">Balayage</option>
+          <option value="Bang Trim">Bang Trim</option>
+          <option value="Beard Trim">Beard Trim</option>
+          <option value="Blowdry">Blowdry</option>
+          <option value="Blowouts">Blowouts</option>
+          <option value="Body Waxing">Body Waxing</option>
+          <option value="Braids">Braids</option>
+          <option value="Brazilian Hair Straightening">Brazilian Hair Straightening</option>
+          <option value="Curly Hair">Curly Hair</option>
+          <option value="Eyebrow Threading">Eyebrow Threading</option>
+          <option value="Gloss or Glaze">Gloss or Glaze</option>
+          <option value="Hair Glossing">Hair Glossing</option>
+          <option value="Hair Highlighting">Hair Highlighting</option>
+          <option value="Hair Hydration Treatments">Hair Hydration Treatments</option>
+          <option value="Hair Regrowth">Hair Regrowth</option>
+          <option value="Hair Straightening">Hair Straightening</option>
+          <option value="Keratin Treatments">Keratin Treatments</option>
+          <option value="Kids Cuts">Kids Cuts</option>
+          <option value="Ombre Hair Color">Ombre Hair Color</option>
+          <option value="Perms">Perms</option>
+          <option value="Updos">Updos</option>
+          <option value="Beard Curl">Beard Curl</option>
+          <option value="Beard Perm">Beard Perm</option>
+          <option value="Moustache Treadlock">Moustache Treadlock</option>
+          <option value="Waxing">Waxing</option>
+          <option value="Shampoo & Conditioning">Shampoo & Conditioning</option>
+          <option value="Makeup Services">Makeup Services</option>
+          <option value="Brazilian Waxing">Brazilian Waxing</option>
+          <option value="Bridal Services">Bridal Services</option>
+          <option value="Eyebrow Shaping">Eyebrow Shaping</option>
+          <option value="Facials">Facials</option>
+          <option value="Beauty Makeovers">Beauty Makeovers</option>
+          <option value="Bridal Makeup">Bridal Makeup</option>
+          <option value="Makeovers">Makeovers</option>
+          <option value="Makeup Classes">Makeup Classes</option>
+          <option value="Performance Makeup">Performance Makeup</option>
+          <option value="Photography Makeup">Photography Makeup</option>
+          <option value="Private Makeup Lessons">Private Makeup Lessons</option>
+          <option value="Special Occasion Makeup">Special Occasion Makeup</option>
+          <option value="Arm Hair Removal">Arm Hair Removal</option>
+          <option value="Back Hair Removal">Back Hair Removal</option>
+          <option value="Chest Hair Removal">Chest Hair Removal</option>
+          <option value="Ear Hair Removal">Ear Hair Removal</option>
+          <option value="Facial Hair Removal">Facial Hair Removal</option>
+          <option value="Leg Hair Removal">Leg Hair Removal</option>
+          <option value="Stomach Hair Removal">Stomach Hair Removal</option>
+          <option value="Bikini Waxing">Bikini Waxing</option>
+          <option value="Chin Waxing">Chin Waxing</option>
+          <option value="Eyebrow Waxing">Eyebrow Waxing</option>
+          <option value="Mens Waxing">Mens Waxing</option>
+        </select>
+
+        <div class="svc-pick" style="display:none;">
+
+            <div class="svc-cat-title">Hair Salon</div>
+            
+            <div class="svc-opt" onclick="toggleSvc(this,'Hair Coloring')">Hair Coloring</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Hair Styling')">Hair Styling</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Balayage')">Balayage</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Bang Trim')">Bang Trim</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Beard Trim')">Beard Trim</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Blowdry')">Blowdry</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Blowouts')">Blowouts</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Body Waxing')">Body Waxing</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Braids')">Braids</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Brazilian Hair Straightening')">Brazilian Hair Straightening</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Curly Hair')">Curly Hair</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Eyebrow Threading')">Eyebrow Threading</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Gloss or Glaze')">Gloss or Glaze</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Hair Glossing')">Hair Glossing</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Hair Highlighting')">Hair Highlighting</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Hair Hydration Treatments')">Hair Hydration Treatments</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Hair Regrowth')">Hair Regrowth</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Hair Straightening')">Hair Straightening</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Keratin Treatments')">Keratin Treatments</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Kids Cuts')">Kids Cuts</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Ombre Hair Color')">Ombre Hair Color</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Perms')">Perms</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Updos')">Updos</div>
+            
+            <div class="svc-cat-title">Stylist</div>
+            
+            <div class="svc-opt" onclick="toggleSvc(this,'Beard Curl')">Beard Curl</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Beard Perm')">Beard Perm</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Moustache Treadlock')">Moustache Treadlock</div>
+            
+            <div class="svc-cat-title">Barber Shop</div>
+            
+            <div class="svc-opt" onclick="toggleSvc(this,'Waxing')">Waxing</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Shampoo & Conditioning')">Shampoo & Conditioning</div>
+            
+            <div class="svc-cat-title">Hairdresser</div>
+            
+            <div class="svc-opt" onclick="toggleSvc(this,'Makeup Services')">Makeup Services</div>
+            
+            <div class="svc-cat-title">Beauty Salon</div>
+            
+            <div class="svc-opt" onclick="toggleSvc(this,'Brazilian Waxing')">Brazilian Waxing</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Bridal Services')">Bridal Services</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Eyebrow Shaping')">Eyebrow Shaping</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Facials')">Facials</div>
+            
+            <div class="svc-cat-title">Make-up Artist</div>
+            
+            <div class="svc-opt" onclick="toggleSvc(this,'Beauty Makeovers')">Beauty Makeovers</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Bridal Makeup')">Bridal Makeup</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Makeovers')">Makeovers</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Makeup Classes')">Makeup Classes</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Performance Makeup')">Performance Makeup</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Photography Makeup')">Photography Makeup</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Private Makeup Lessons')">Private Makeup Lessons</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Special Occasion Makeup')">Special Occasion Makeup</div>
+            
+            <div class="svc-cat-title">Hair Removal Service</div>
+            
+            <div class="svc-opt" onclick="toggleSvc(this,'Arm Hair Removal')">Arm Hair Removal</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Back Hair Removal')">Back Hair Removal</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Chest Hair Removal')">Chest Hair Removal</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Ear Hair Removal')">Ear Hair Removal</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Facial Hair Removal')">Facial Hair Removal</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Leg Hair Removal')">Leg Hair Removal</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Stomach Hair Removal')">Stomach Hair Removal</div>
+            
+            <div class="svc-cat-title">Waxing Hair Removal Service</div>
+            
+            <div class="svc-opt" onclick="toggleSvc(this,'Bikini Waxing')">Bikini Waxing</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Chin Waxing')">Chin Waxing</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Eyebrow Waxing')">Eyebrow Waxing</div>
+            <div class="svc-opt" onclick="toggleSvc(this,'Mens Waxing')">Mens Waxing</div>
+            
+            </div>
+
+        </div>
+
+        <h3>Select Stylist</h3>
+
+        <div class="staff-grid">
+
+          <div class="staff-c"
+            onclick="pickStaff(this,'Raman Batth')">
+            Raman Batth
+          </div>
+
+          <div class="staff-c"
+            onclick="pickStaff(this,'Senior Stylist')">
+            Senior Stylist
+          </div>
+
+        </div>
+
+        <button class="btn-gold"
+          onclick="validateStep1()">
+          Continue
+        </button>
+
+      </div>
+
+      <!-- PAGE 2 -->
+      <div class="pg" id="pg2">
+
+        <h3>Select Date</h3>
+
+        <div id="dateStrip"></div>
+
+        <h3>Select Time</h3>
+
+        <div id="timeGrid" class="time-grid"></div>
+
+        <button class="btn-gold"
+          onclick="validateStep2()">
+          Continue
+        </button>
+
+      </div>
+
+      <!-- PAGE 3 -->
+      <div class="pg" id="pg3">
+
+        <h3>Your Details</h3>
+
+        <input
+          type="text"
+          id="fname"
+          class="f-input"
+          placeholder="First Name">
+
+        <input
+          type="text"
+          id="lname"
+          class="f-input"
+          placeholder="Last Name">
+
+        <input
+          type="tel"
+          id="phone"
+          class="f-input"
+          placeholder="+1 647 717 6747">
+
+        <input
+          type="email"
+          id="email"
+          class="f-input"
+          placeholder="Email Address">
+
+        <button class="btn-gold"
+          onclick="validateStep3()">
+          Continue
+        </button>
+
+      </div>
+
+      <!-- PAGE 4 -->
+      <div class="pg" id="pg4">
+
+        <h3>Booking Summary</h3>
+
+        <div id="summaryBox"></div>
+
+        <h3>Select Payment</h3>
+
+        <div class="pay-grid">
+
+          <div class="pay-opt"
+            onclick="pickPay(this,'card')">
+            Credit / Debit Card
+          </div>
+
+          <div class="pay-opt"
+            onclick="pickPay(this,'upi')">
+            UPI
+          </div>
+
+          <div class="pay-opt"
+            onclick="pickPay(this,'netbanking')">
+            Net Banking
+          </div>
+
+        </div>
+
+        <div id="upiFields"></div>
+
+        <div id="cardFields">
+
+          <input
+            type="text"
+            class="f-input"
+            placeholder="Card Number"
+            oninput="fmtCard(this)">
+
+          <input
+            type="text"
+            class="f-input"
+            placeholder="MM / YY"
+            oninput="fmtExpiry(this)">
+
+        </div>
+
+        <div id="nbFields"></div>
+
+        <button class="btn-gold"
+          onclick="processPayment()">
+          Pay & Confirm
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- PROCESSING -->
+    <div id="processing">
+
+      <h3>Processing Payment...</h3>
+
+    </div>
+
+    <!-- SUCCESS -->
+    <div id="successView">
+
+      <h2>Booking Confirmed 🎉</h2>
+
+      <p id="bkRef"></p>
+
+      <button class="btn-gold"
+        onclick="closeModal()">
+        Close
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/booking.js"></script>
+<script type="module" src="js/firebase.js"></script>
+
+<script>
+  initBookingSystem();
+</script>
+
+<a href="https://wa.me/16477176747" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="cursor-glow"></div>
+
+</body>
+</html>
