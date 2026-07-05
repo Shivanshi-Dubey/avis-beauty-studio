@@ -6,7 +6,7 @@
    ============================================================ */
 
 
-  window.initBookingSystem = function () {
+   window.initBookingSystem = function () {
     'use strict';
   
     /* ── Booking state object ── */
@@ -515,7 +515,26 @@ async function(selectedDate){
 
 };
 
+    /* ─────────────────────────────────────────
+       PHONE AUTO PREFIX (+1)
+    ───────────────────────────────────────── */
+    function setupPhonePrefix(id) {
+      const input = document.getElementById(id);
+      if (!input) return;
 
+      input.addEventListener('focus', function () {
+        if (!this.value) this.value = '+1 ';
+      });
+
+      input.addEventListener('input', function () {
+        if (!this.value.startsWith('+1')) {
+          this.value = '+1 ' + this.value.replace(/^\+?1?\s?/, '');
+        }
+      });
+    }
+
+    setupPhonePrefix('phone');
+    setupPhonePrefix('contactPhone');
 
     /* ─────────────────────────────────────────
    TOAST NOTIFICATION
@@ -535,4 +554,3 @@ function showToast(message) {
     }, 2600);
   }
 };
-  
