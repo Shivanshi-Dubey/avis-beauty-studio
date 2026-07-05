@@ -473,7 +473,12 @@
   .svc-row:last-child { border-bottom:none; }
   .svc-row span:last-child { color:var(--text-dark); font-weight:500; white-space:nowrap; margin-left:.5rem; }
   
-  /* ── LASER SPOTLIGHT ── */
+  /* ── LASER SPOTLIGHT ──
+     FIX: previously .laser-img had BOTH a CSS background-image
+     AND a real <img> tag inside it. That stacked two images on
+     top of each other and caused the overlap. Now the <img> is
+     the only image, positioned to fill the box, and the dark
+     tint overlay sits above it via z-index. */
   #laser        { background:var(--charcoal); padding:0; }
   .laser-inner  { display:grid; grid-template-columns:1fr 1fr; min-height:560px; }
   .laser-text   { padding:7rem 5rem; display:flex; flex-direction:column; justify-content:center; }
@@ -484,22 +489,39 @@
   .laser-perk   { display:flex; align-items:center; gap:.9rem; font-size:.83rem; color:var(--text-on-dark); font-weight:300; }
   .perk-dot     { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
   .laser-img {
-    background:url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=900&q=85') center/cover no-repeat;
-    position:relative; min-height:400px;
+    position:relative;
+    min-height:400px;
+    overflow:hidden;
   }
-  .laser-img::before { content:''; position:absolute; inset:0; background:rgba(26,20,16,.18); }
+  .laser-img img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .laser-img::before {
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(26,20,16,.18);
+    z-index:1;
+    pointer-events:none;
+  }
   
   /* ── GALLERY ── */
   #gallery      { background:var(--warm-white); }
   #gallery .sec-tag::before { background:var(--gold); }
   #gallery .sec-title      { color:var(--charcoal); }
   #gallery .sec-title em   { color:#8a6d1c; }
-  .gallery-grid {
+  .gallery-grid{
     display:grid;
     grid-template-columns:2fr 1fr 1fr;
-    grid-template-rows:240px 240px;
-    gap:8px; margin-top:3.5rem;
-  }
+    grid-template-rows:320px 320px;   /* was 240px */
+    gap:8px;
+    margin-top:3.5rem;
+}
   .g-item           { overflow:hidden; position:relative; cursor:pointer; }
   .g-item:first-child { grid-row:span 2; }
   .g-item img       { width:100%; height:100%; object-fit:cover; transition:transform .7s; display:block; }
@@ -1534,7 +1556,11 @@ body{
   padding-bottom:2rem;
 }
 
-/* ── ABOUT ── */
+/* ── ABOUT ──
+   FIX: same bug as the laser section. .about-img previously had
+   a CSS background-image AND a real <img> inside it, stacking
+   two images. Now the <img> fills the box via absolute position
+   + object-fit, and border-radius/overflow keep the rounded crop. */
 .about-sec{
   background:#0f0f10;
 }
@@ -1551,8 +1577,17 @@ body{
   width:100%;
   min-height:480px;
   border-radius:24px;
-  background:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=85') center/cover no-repeat;
   border:1px solid rgba(212,175,55,.15);
+  position:relative;
+  overflow:hidden;
+}
+.about-img img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 .about-badge{
   position:absolute;
@@ -1566,6 +1601,7 @@ body{
   letter-spacing:.16em;
   text-transform:uppercase;
   border-radius:40px;
+  z-index:2;
 }
 .about-content .sec-title{
   color:#fff;
@@ -1730,5 +1766,4 @@ body{
   background:rgba(212,175,55,.15);
   border-color:var(--gold);
   color:var(--gold);
-}
-  
+} 
