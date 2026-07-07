@@ -253,8 +253,7 @@ buildTimes();
         <div class="s-row"><label>Date</label><span>${B.date   || '—'}</span></div>
         <div class="s-row"><label>Time</label><span>${B.time   || '—'}</span></div>
         <div class="s-row"><label>Name</label><span>${(fname + ' ' + lname).trim() || '—'}</span></div>
-        <div class="s-row"><label>Phone</label><span>${phone || '—'}</span></div>
-        <div class="s-total"><label>Advance Token</label><span>$200</span></div>`;
+        <div class="s-row"><label>Phone</label><span>${phone || '—'}</span></div>`;
     }
   
     /* ─────────────────────────────────────────
