@@ -2,7 +2,7 @@
    AVI'S BEAUTY STUDIO — booking.js
    Full booking modal logic:
    open/close · stepper · service picker · staff selection
-   date/time builder · summary · payment · processing · success
+   date/time builder · summary · confirm · success
    ============================================================ */
 
 
@@ -10,7 +10,7 @@
     'use strict';
   
     /* ── Booking state object ── */
-    const B = { services: [], staff: '', date: '', time: '', payMethod: '' };
+    const B = { services: [], staff: '', date: '', time: '' };
   
     /* ── Taken time slots (could be fetched from backend later) ── */
     const TAKEN_SLOTS = ['12:00', '12:30', '15:00', '17:30'];
@@ -42,15 +42,13 @@
       document.body.style.overflow = '';
   
       // Reset booking state
-      B.services = []; B.staff = ''; B.date = ''; B.time = ''; B.payMethod = '';
+      B.services = []; B.staff = ''; B.date = ''; B.time = '';
   
       // Reset UI selections
-      document.querySelectorAll('.svc-opt, .staff-c, .pay-opt')
+      document.querySelectorAll('.svc-opt, .staff-c')
               .forEach(e => e.classList.remove('on'));
       const serviceSelect = document.getElementById('serviceSelect');
       if (serviceSelect) serviceSelect.value = '';
-      ['upiFields','cardFields','nbFields']
-              .forEach(id => document.getElementById(id).classList.remove('show'));
   
       // Reset modal to initial state
       document.getElementById('mainBody').style.display = 'block';
@@ -257,49 +255,11 @@ buildTimes();
     }
   
     /* ─────────────────────────────────────────
-       PAYMENT METHOD PICKER
+       BOOKING CONFIRMATION & FIREBASE SAVE
+       (payment step removed — confirmation via WhatsApp)
     ───────────────────────────────────────── */
-    window.pickPay = function (el, type) {
-      document.querySelectorAll('.pay-opt').forEach(e => e.classList.remove('on'));
-      el.classList.add('on');
-      B.payMethod = type;
-  
-      ['upiFields','cardFields','nbFields']
-        .forEach(id => document.getElementById(id).classList.remove('show'));
-  
-      const fieldMap = { upi:'upiFields', card:'cardFields', netbanking:'nbFields' };
-      if (fieldMap[type]) document.getElementById(fieldMap[type]).classList.add('show');
-    };
-  
-    /* ─────────────────────────────────────────
-       CARD INPUT FORMATTERS
-    ───────────────────────────────────────── */
-    window.fmtCard = function (el) {
-      let v = el.value.replace(/\D/g, '').slice(0, 16);
-      el.value = v.replace(/(.{4})/g, '$1  ').trim();
-    };
-  
-    window.fmtExpiry = function (el) {
-      let v = el.value.replace(/\D/g, '').slice(0, 4);
-      if (v.length > 2) v = v.slice(0, 2) + ' / ' + v.slice(2);
-      el.value = v;
-    };
-  
-    /* ─────────────────────────────────────────
-       PAYMENT PROCESSING & SUCCESS
-    ───────────────────────────────────────── */
-   /* ─────────────────────────────────────────
-   PAYMENT PROCESSING & FIREBASE BOOKING
-───────────────────────────────────────── */
 
-window.processPayment = function () {
-
-  if (!B.payMethod) {
-
-    showToast('Please select a payment method.');
-
-    return;
-  }
+window.confirmBooking = function () {
 
   // Show loading
 
@@ -388,8 +348,6 @@ window.processPayment = function () {
 
           time: B.time,
 
-          payment: B.payMethod,
-
           status: 'Pending',
 
           slotId: slotId,
@@ -420,23 +378,13 @@ window.processPayment = function () {
         const whatsappMessage =
 
 `Hello Avi's Beauty Studio,
-
 New Appointment Booking ✨
-
 Name: ${fname} ${lname}
-
 Phone: ${phone}
-
 Service: ${B.services.join(', ')}
-
 Stylist: ${B.staff}
-
 Date: ${B.date}
-
 Time: ${B.time}
-
-Payment: ${B.payMethod}
-
 Booking ID: ${bookingId}
 `;
 

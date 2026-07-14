@@ -793,7 +793,7 @@
 
         <div class="step" id="stp4">
           <span>4</span>
-          <small>Payment</small>
+          <small>Confirm</small>
         </div>
 
       </div>
@@ -1024,50 +1024,9 @@
 
         <div id="summaryBox"></div>
 
-        <h3>Select Payment</h3>
-
-        <div class="pay-grid">
-
-          <div class="pay-opt"
-            onclick="pickPay(this,'card')">
-            Credit / Debit Card
-          </div>
-
-          <div class="pay-opt"
-            onclick="pickPay(this,'upi')">
-            UPI
-          </div>
-
-          <div class="pay-opt"
-            onclick="pickPay(this,'netbanking')">
-            Net Banking
-          </div>
-
-        </div>
-
-        <div id="upiFields"></div>
-
-        <div id="cardFields">
-
-          <input
-            type="text"
-            class="f-input"
-            placeholder="Card Number"
-            oninput="fmtCard(this)">
-
-          <input
-            type="text"
-            class="f-input"
-            placeholder="MM / YY"
-            oninput="fmtExpiry(this)">
-
-        </div>
-
-        <div id="nbFields"></div>
-
         <button class="btn-gold"
-          onclick="processPayment()">
-          Pay & Confirm
+          onclick="confirmBooking()">
+          Confirm Booking
         </button>
 
       </div>
@@ -1077,7 +1036,7 @@
     <!-- PROCESSING -->
     <div id="processing">
 
-      <h3>Processing Payment...</h3>
+      <h3>Confirming Booking...</h3>
 
     </div>
 
