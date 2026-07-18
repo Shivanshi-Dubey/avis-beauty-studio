@@ -493,14 +493,15 @@
     min-height:400px;
     overflow:hidden;
   }
-  .laser-img img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-  }
+  .laser-img img,
+.laser-img video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
   .laser-img::before {
     content:'';
     position:absolute;
@@ -1797,3 +1798,4 @@ body{
   border-top: 1px solid var(--border);
   padding-top: 1rem;
 }
+
