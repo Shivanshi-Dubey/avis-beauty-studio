@@ -96,6 +96,36 @@
        SMOOTH SCROLL
     ───────────────────────────────────────── */
   
+    function smoothScrollTo(targetY, duration) {
+
+      const startY = window.scrollY;
+      const distance = targetY - startY;
+      const startTime = performance.now();
+
+      function easeInOutCubic(t) {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function step(currentTime) {
+
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeInOutCubic(progress);
+
+        window.scrollTo(0, startY + distance * eased);
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+
+      }
+
+      requestAnimationFrame(step);
+
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   
       anchor.addEventListener('click', function (e) {
@@ -109,13 +139,16 @@
         if (!target) return;
   
         e.preventDefault();
-  
-        target.scrollIntoView({
-  
-          behavior: 'smooth',
-          block: 'start'
-  
-        });
+
+        const navHeight = document.getElementById('navbar')?.offsetHeight || 0;
+        const targetY = target.getBoundingClientRect().top + window.scrollY - navHeight;
+
+        // duration scales gently with distance so short hops stay quick
+        // and long jumps (Home -> Contact) don't feel abrupt
+        const distance = Math.abs(targetY - window.scrollY);
+        const duration = Math.min(1600, Math.max(500, distance * 0.6));
+
+        smoothScrollTo(targetY, duration);
   
       });
   
