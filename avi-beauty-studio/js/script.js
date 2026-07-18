@@ -206,16 +206,37 @@ window.addEventListener('load',()=>{
         }
 
         const text = encodeURIComponent(
-          `Hi Avi's Beauty Studio,%0A%0A` +
-          `Name: ${name}%0A` +
-          `Phone: ${phone}%0A` +
-          (email ? `Email: ${email}%0A` : '') +
-          `%0AMessage: ${message}`
+          `Hi Avi's Beauty Studio,\n\n` +
+          `Name: ${name}\n` +
+          `Phone: ${phone}\n` +
+          (email ? `Email: ${email}\n` : '') +
+          `\nMessage: ${message}`
         );
 
         window.open(`https://wa.me/16477176747?text=${text}`, '_blank');
       });
 
     }
+
+    /* ─────────────────────────────────────────
+       SERVICES ACCORDION
+       (click a category heading to expand/collapse it,
+       so the page doesn't force one long endless scroll)
+    ───────────────────────────────────────── */
+
+    window.toggleCategory = function (heading) {
+
+      const card = heading.closest('.svc-card');
+      if (!card) return;
+
+      const isOpen = card.classList.contains('open');
+
+      // collapse all cards first
+      document.querySelectorAll('.svc-card').forEach(c => c.classList.remove('open'));
+
+      // if it wasn't already open, open it now
+      if (!isOpen) card.classList.add('open');
+
+    };
   
   })();

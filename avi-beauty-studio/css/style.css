@@ -1767,3 +1767,33 @@ body{
   border-color:var(--gold);
   color:var(--gold);
 } 
+
+.svc-card h3 {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.svc-card h3::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--gold);
+  transition: transform .3s ease;
+}
+.svc-card.open h3::after {
+  content: '−';
+}
+.svc-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease, margin-top .4s ease;
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+.svc-card.open .svc-list {
+  max-height: 800px;
+  margin-top: 1.2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}

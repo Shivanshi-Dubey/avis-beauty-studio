@@ -28,11 +28,24 @@
     /* ─────────────────────────────────────────
        OPEN / CLOSE
     ───────────────────────────────────────── */
-    window.openModal = function () {
+    window.openModal = function (category) {
       document.getElementById('overlay').classList.add('open');
       document.body.style.overflow = 'hidden';
+
       const serviceSelect = document.getElementById('serviceSelect');
-      if (serviceSelect) serviceSelect.value = '';
+      const laserSelect = document.getElementById('laserServiceSelect');
+      const svcHeading = document.getElementById('svcHeading');
+
+      if (category === 'laser') {
+        if (serviceSelect) { serviceSelect.value = ''; serviceSelect.style.display = 'none'; }
+        if (laserSelect)   { laserSelect.value = '';   laserSelect.style.display = 'block'; }
+        if (svcHeading) svcHeading.textContent = 'Select Laser Treatment';
+      } else {
+        if (serviceSelect) { serviceSelect.value = ''; serviceSelect.style.display = 'block'; }
+        if (laserSelect)   { laserSelect.value = '';   laserSelect.style.display = 'none'; }
+        if (svcHeading) svcHeading.textContent = 'Select Services';
+      }
+
       buildDates();
       buildTimes();
     };
@@ -48,7 +61,9 @@
       document.querySelectorAll('.svc-opt, .staff-c')
               .forEach(e => e.classList.remove('on'));
       const serviceSelect = document.getElementById('serviceSelect');
+      const laserSelect = document.getElementById('laserServiceSelect');
       if (serviceSelect) serviceSelect.value = '';
+      if (laserSelect) laserSelect.value = '';
   
       // Reset modal to initial state
       document.getElementById('mainBody').style.display = 'block';
