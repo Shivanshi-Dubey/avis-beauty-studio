@@ -1926,3 +1926,51 @@ body{
   .insta-grid{ grid-template-columns:1fr; }
   .insta-grid video{ height:260px; }
 }
+
+/* ═══════════════════════════════════════
+   GENDER FILTER TABS — service.html
+═══════════════════════════════════════ */
+
+.gender-filter{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-bottom:3rem;
+}
+
+.gf-btn{
+  background:rgba(255,255,255,.03);
+  color:var(--text-mid);
+  border:1px solid rgba(212,175,55,.18);
+  padding:.7rem 1.6rem;
+  font-family:'Jost',sans-serif;
+  font-size:.72rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  cursor:pointer;
+  border-radius:40px;
+  transition:.3s ease;
+}
+
+.gf-btn:hover{
+  border-color:rgba(212,175,55,.4);
+  color:var(--gold-light);
+}
+
+.gf-btn.active{
+  background:linear-gradient(135deg,var(--gold) 0%,#c9a030 100%);
+  color:var(--rich-black);
+  border-color:transparent;
+  font-weight:600;
+  box-shadow:0 6px 18px rgba(212,175,55,.25);
+}
+
+@media(max-width:600px){
+  .gender-filter{
+    gap:.5rem;
+  }
+  .gf-btn{
+    padding:.6rem 1.2rem;
+    font-size:.66rem;
+  }
+}

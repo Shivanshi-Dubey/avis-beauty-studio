@@ -273,3 +273,54 @@ window.addEventListener('load',()=>{
     };
   
   })();
+
+  /* ─────────────────────────────────────────
+   GENDER FILTER (service.html only —
+   safely does nothing on pages without it)
+───────────────────────────────────────── */
+
+(function () {
+
+  const filterBar = document.querySelector('.gender-filter');
+  if (!filterBar) return;
+
+  const filterBtns = filterBar.querySelectorAll('.gf-btn');
+  const svcCards = document.querySelectorAll('.svc-grid .svc-card');
+
+  filterBtns.forEach(btn => {
+
+    btn.addEventListener('click', () => {
+
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter; // 'all' | 'her' | 'him' | 'unisex'
+
+      svcCards.forEach(card => {
+
+        const rows = card.querySelectorAll('.svc-row');
+        let visibleCount = 0;
+
+        rows.forEach(row => {
+
+          const g = row.dataset.g || 'unisex';
+
+          const match =
+            filter === 'all' ||
+            g === filter ||
+            (filter !== 'unisex' && g === 'unisex');
+
+          row.style.display = match ? 'flex' : 'none';
+          if (match) visibleCount++;
+
+        });
+
+        card.style.display = visibleCount > 0 ? '' : 'none';
+
+      });
+
+    });
+
+  });
+
+})();

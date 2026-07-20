@@ -19,21 +19,15 @@
 <body>
 
   <div class="lux-loader" id="luxLoader">
-
     <div class="loader-inner">
-  
       <div class="loader-logo">
         Avi's <span>Beauty</span> Studio
       </div>
-  
       <div class="loader-line"></div>
-  
       <p class="loader-text">
         Luxury Beauty Experience
       </p>
-  
     </div>
-  
   </div>
 
 <!-- ═══════════════════════════════════════
@@ -47,7 +41,7 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html" class="">Home</a></li>
     <li><a href="about.html" class="">About</a></li>
-    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="service.html" class="active">Services</a></li>
     <li><a href="packages.html" class="">Packages</a></li>
     <li><a href="laser.html" class="">Laser</a></li>
     <li><a href="gallery.html" class="">Gallery</a></li>
@@ -94,8 +88,16 @@
       </div>
 
       <p class="sec-lead">
-          Professional beauty services performed by experienced stylists using premium products.
+          Professional beauty services performed by experienced stylists using premium products — for men and women alike.
       </p>
+  </div>
+
+  <!-- GENDER FILTER -->
+  <div class="gender-filter" role="tablist" aria-label="Filter services by gender">
+    <button class="gf-btn active" data-filter="all">All Services</button>
+    <button class="gf-btn" data-filter="her">For Her</button>
+    <button class="gf-btn" data-filter="him">For Him</button>
+    <button class="gf-btn" data-filter="unisex">Unisex</button>
   </div>
 
   <div class="svc-grid">
@@ -107,17 +109,17 @@
           <h3 onclick="toggleCategory(this)">Facial</h3>
 
           <div class="svc-list">
-              <div class="svc-row"><span>Fruit Facial</span><span>$65</span></div>
-              <div class="svc-row"><span>Herbal Facial</span><span>$75</span></div>
-              <div class="svc-row"><span>Gold Facial</span><span>$85</span></div>
-              <div class="svc-row"><span>Oxygen Facial</span><span>$85</span></div>
-              <div class="svc-row"><span>Whitening Facial</span><span>$95</span></div>
-              <div class="svc-row"><span>Nature-Med Facial</span><span>$100</span></div>
-              <div class="svc-row"><span>Anti-Aging Whitening Facial</span><span>$135</span></div>
-              <div class="svc-row"><span>Korean Facial</span><span>$135</span></div>
-              <div class="svc-row"><span>Casmara Facial</span><span>$135</span></div>
-              <div class="svc-row"><span>Hydra-Dermabrasion Facial</span><span>$135</span></div>
-              <div class="svc-row"><span>High-Frequency Facial Treatment</span><span>$135</span></div>
+              <div class="svc-row" data-g="unisex"><span>Fruit Facial</span><span>$65</span></div>
+              <div class="svc-row" data-g="unisex"><span>Herbal Facial</span><span>$75</span></div>
+              <div class="svc-row" data-g="unisex"><span>Gold Facial</span><span>$85</span></div>
+              <div class="svc-row" data-g="unisex"><span>Oxygen Facial</span><span>$85</span></div>
+              <div class="svc-row" data-g="unisex"><span>Whitening Facial</span><span>$95</span></div>
+              <div class="svc-row" data-g="unisex"><span>Nature-Med Facial</span><span>$100</span></div>
+              <div class="svc-row" data-g="unisex"><span>Anti-Aging Whitening Facial</span><span>$135</span></div>
+              <div class="svc-row" data-g="unisex"><span>Korean Facial</span><span>$135</span></div>
+              <div class="svc-row" data-g="unisex"><span>Casmara Facial</span><span>$135</span></div>
+              <div class="svc-row" data-g="unisex"><span>Hydra-Dermabrasion Facial</span><span>$135</span></div>
+              <div class="svc-row" data-g="unisex"><span>High-Frequency Facial Treatment</span><span>$135</span></div>
           </div>
       </div>
 
@@ -128,17 +130,17 @@
           <h3 onclick="toggleCategory(this)">Waxing</h3>
 
           <div class="svc-list">
-              <div class="svc-row"><span>Face Wax</span><span>$25</span></div>
-              <div class="svc-row"><span>Full Arm Wax</span><span>$25</span></div>
-              <div class="svc-row"><span>Half Arm Wax</span><span>$20</span></div>
-              <div class="svc-row"><span>Under Arms Wax</span><span>$8</span></div>
-              <div class="svc-row"><span>Full Legs Wax</span><span>$35</span></div>
-              <div class="svc-row"><span>Half Legs Wax</span><span>$20</span></div>
-              <div class="svc-row"><span>Stomach Wax</span><span>$20</span></div>
-              <div class="svc-row"><span>Back Wax</span><span>$20</span></div>
-              <div class="svc-row"><span>Bikini Line Wax</span><span>$25</span></div>
-              <div class="svc-row"><span>Brazilian Wax</span><span>$45</span></div>
-              <div class="svc-row"><span>Full Body Wax</span><span>$125</span></div>
+              <div class="svc-row" data-g="unisex"><span>Face Wax</span><span>$25</span></div>
+              <div class="svc-row" data-g="unisex"><span>Full Arm Wax</span><span>$25</span></div>
+              <div class="svc-row" data-g="unisex"><span>Half Arm Wax</span><span>$20</span></div>
+              <div class="svc-row" data-g="unisex"><span>Under Arms Wax</span><span>$8</span></div>
+              <div class="svc-row" data-g="unisex"><span>Full Legs Wax</span><span>$35</span></div>
+              <div class="svc-row" data-g="unisex"><span>Half Legs Wax</span><span>$20</span></div>
+              <div class="svc-row" data-g="unisex"><span>Stomach Wax</span><span>$20</span></div>
+              <div class="svc-row" data-g="him"><span>Back Wax</span><span>$20</span></div>
+              <div class="svc-row" data-g="her"><span>Bikini Line Wax</span><span>$25</span></div>
+              <div class="svc-row" data-g="her"><span>Brazilian Wax</span><span>$45</span></div>
+              <div class="svc-row" data-g="unisex"><span>Full Body Wax</span><span>$125</span></div>
           </div>
       </div>
 
@@ -149,9 +151,9 @@
           <h3 onclick="toggleCategory(this)">Bleach</h3>
 
           <div class="svc-list">
-              <div class="svc-row"><span>Face Bleach</span><span>$20</span></div>
-              <div class="svc-row"><span>Back Bleach</span><span>$35</span></div>
-              <div class="svc-row"><span>Full Body Bleach</span><span>$120</span></div>
+              <div class="svc-row" data-g="her"><span>Face Bleach</span><span>$20</span></div>
+              <div class="svc-row" data-g="him"><span>Back Bleach</span><span>$35</span></div>
+              <div class="svc-row" data-g="unisex"><span>Full Body Bleach</span><span>$120</span></div>
           </div>
       </div>
 
@@ -162,14 +164,14 @@
           <h3 onclick="toggleCategory(this)">Threading</h3>
 
           <div class="svc-list">
-              <div class="svc-row"><span>Eyebrows</span><span>$8</span></div>
-              <div class="svc-row"><span>Upper Lips</span><span>$4</span></div>
-              <div class="svc-row"><span>Chin</span><span>$5</span></div>
-              <div class="svc-row"><span>Forehead</span><span>$4</span></div>
-              <div class="svc-row"><span>Side Face</span><span>$5</span></div>
-              <div class="svc-row"><span>Neck</span><span>$7</span></div>
-              <div class="svc-row"><span>Full Face</span><span>$25</span></div>
-              <div class="svc-row"><span>Eyebrow Tinting</span><span>$20</span></div>
+              <div class="svc-row" data-g="unisex"><span>Eyebrows</span><span>$8</span></div>
+              <div class="svc-row" data-g="her"><span>Upper Lips</span><span>$4</span></div>
+              <div class="svc-row" data-g="her"><span>Chin</span><span>$5</span></div>
+              <div class="svc-row" data-g="her"><span>Forehead</span><span>$4</span></div>
+              <div class="svc-row" data-g="her"><span>Side Face</span><span>$5</span></div>
+              <div class="svc-row" data-g="her"><span>Neck</span><span>$7</span></div>
+              <div class="svc-row" data-g="her"><span>Full Face</span><span>$25</span></div>
+              <div class="svc-row" data-g="her"><span>Eyebrow Tinting</span><span>$20</span></div>
           </div>
       </div>
 
@@ -180,20 +182,20 @@
           <h3 onclick="toggleCategory(this)">Haircare</h3>
 
           <div class="svc-list">
-              <div class="svc-row"><span>Women's Haircut & Style</span><span>$45</span></div>
-              <div class="svc-row"><span>Women's Hair Trim</span><span>$30</span></div>
-              <div class="svc-row"><span>Layers</span><span>$45</span></div>
-              <div class="svc-row"><span>Bangs</span><span>$10</span></div>
-              <div class="svc-row"><span>Kid's Cut</span><span>$20</span></div>
-              <div class="svc-row"><span>Men's Cut</span><span>$25</span></div>
-              <div class="svc-row"><span>Beard Trim</span><span>$20</span></div>
-              <div class="svc-row"><span>Permanent Hair Color</span><span>$75+</span></div>
-              <div class="svc-row"><span>Root Touch-Up</span><span>$40+</span></div>
-              <div class="svc-row"><span>Color Correction</span><span>$75+</span></div>
-              <div class="svc-row"><span>Full Highlights</span><span>$200+</span></div>
-              <div class="svc-row"><span>Keratin/Smoothing Treatment</span><span>$200+</span></div>
-              <div class="svc-row"><span>Moustache Threadlock</span><span>$55</span></div>
-              <div class="svc-row"><span>Beard Perm</span><span>$135+</span></div>
+              <div class="svc-row" data-g="her"><span>Women's Haircut & Style</span><span>$45</span></div>
+              <div class="svc-row" data-g="her"><span>Women's Hair Trim</span><span>$30</span></div>
+              <div class="svc-row" data-g="her"><span>Layers</span><span>$45</span></div>
+              <div class="svc-row" data-g="her"><span>Bangs</span><span>$10</span></div>
+              <div class="svc-row" data-g="unisex"><span>Kid's Cut</span><span>$20</span></div>
+              <div class="svc-row" data-g="him"><span>Men's Cut</span><span>$25</span></div>
+              <div class="svc-row" data-g="him"><span>Beard Trim</span><span>$20</span></div>
+              <div class="svc-row" data-g="unisex"><span>Permanent Hair Color</span><span>$75+</span></div>
+              <div class="svc-row" data-g="unisex"><span>Root Touch-Up</span><span>$40+</span></div>
+              <div class="svc-row" data-g="unisex"><span>Color Correction</span><span>$75+</span></div>
+              <div class="svc-row" data-g="unisex"><span>Full Highlights</span><span>$200+</span></div>
+              <div class="svc-row" data-g="unisex"><span>Keratin/Smoothing Treatment</span><span>$200+</span></div>
+              <div class="svc-row" data-g="him"><span>Moustache Threadlock</span><span>$55</span></div>
+              <div class="svc-row" data-g="him"><span>Beard Perm</span><span>$135+</span></div>
           </div>
       </div>
 
@@ -204,10 +206,10 @@
           <h3 onclick="toggleCategory(this)">Makeup</h3>
 
           <div class="svc-list">
-              <div class="svc-row"><span>Basic Makeup</span><span>$55</span></div>
-              <div class="svc-row"><span>Party Makeup</span><span>$75+</span></div>
-              <div class="svc-row"><span>Formal Makeup</span><span>$65+</span></div>
-              <div class="svc-row"><span>Bridal Makeup</span><span>$150+</span></div>
+              <div class="svc-row" data-g="her"><span>Basic Makeup</span><span>$55</span></div>
+              <div class="svc-row" data-g="her"><span>Party Makeup</span><span>$75+</span></div>
+              <div class="svc-row" data-g="her"><span>Formal Makeup</span><span>$65+</span></div>
+              <div class="svc-row" data-g="her"><span>Bridal Makeup</span><span>$150+</span></div>
           </div>
       </div>
 
@@ -218,12 +220,12 @@
           <h3 onclick="toggleCategory(this)">Hairstyle</h3>
 
           <div class="svc-list">
-              <div class="svc-row"><span>Party Hairstyles</span><span>$55+</span></div>
-              <div class="svc-row"><span>Updo's</span><span>$45+</span></div>
-              <div class="svc-row"><span>Blow Out Styles</span><span>$35+</span></div>
-              <div class="svc-row"><span>Curls & Styled</span><span>$65+</span></div>
-              <div class="svc-row"><span>Straightened & Styled</span><span>$55+</span></div>
-              <div class="svc-row"><span>Bridal Hairstyle</span><span>$125+</span></div>
+              <div class="svc-row" data-g="her"><span>Party Hairstyles</span><span>$55+</span></div>
+              <div class="svc-row" data-g="her"><span>Updo's</span><span>$45+</span></div>
+              <div class="svc-row" data-g="unisex"><span>Blow Out Styles</span><span>$35+</span></div>
+              <div class="svc-row" data-g="her"><span>Curls & Styled</span><span>$65+</span></div>
+              <div class="svc-row" data-g="unisex"><span>Straightened & Styled</span><span>$55+</span></div>
+              <div class="svc-row" data-g="her"><span>Bridal Hairstyle</span><span>$125+</span></div>
           </div>
       </div>
 
@@ -251,12 +253,12 @@
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="services.html">Hair Styling</a></li>
-        <li><a href="services.html">Skin &amp; Facials</a></li>
+        <li><a href="service.html">Hair Styling</a></li>
+        <li><a href="service.html">Skin &amp; Facials</a></li>
         <li><a href="laser.html">Laser Hair Removal</a></li>
-        <li><a href="services.html">Waxing &amp; Threading</a></li>
-        <li><a href="services.html">Bridal Makeup</a></li>
-        <li><a href="services.html">View All Services</a></li>
+        <li><a href="service.html">Waxing &amp; Threading</a></li>
+        <li><a href="service.html">Bridal Makeup</a></li>
+        <li><a href="service.html">View All Services</a></li>
       </ul>
     </div>
 
@@ -389,7 +391,7 @@
         <div class="svc-pick" style="display:none;">
 
             <div class="svc-cat-title">Hair Salon</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Hair Coloring')">Hair Coloring</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Hair Styling')">Hair Styling</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Balayage')">Balayage</div>
@@ -413,31 +415,31 @@
             <div class="svc-opt" onclick="toggleSvc(this,'Ombre Hair Color')">Ombre Hair Color</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Perms')">Perms</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Updos')">Updos</div>
-            
+
             <div class="svc-cat-title">Stylist</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Beard Curl')">Beard Curl</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Beard Perm')">Beard Perm</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Moustache Treadlock')">Moustache Treadlock</div>
-            
+
             <div class="svc-cat-title">Barber Shop</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Waxing')">Waxing</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Shampoo & Conditioning')">Shampoo & Conditioning</div>
-            
+
             <div class="svc-cat-title">Hairdresser</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Makeup Services')">Makeup Services</div>
-            
+
             <div class="svc-cat-title">Beauty Salon</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Brazilian Waxing')">Brazilian Waxing</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Bridal Services')">Bridal Services</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Eyebrow Shaping')">Eyebrow Shaping</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Facials')">Facials</div>
-            
+
             <div class="svc-cat-title">Make-up Artist</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Beauty Makeovers')">Beauty Makeovers</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Bridal Makeup')">Bridal Makeup</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Makeovers')">Makeovers</div>
@@ -446,9 +448,9 @@
             <div class="svc-opt" onclick="toggleSvc(this,'Photography Makeup')">Photography Makeup</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Private Makeup Lessons')">Private Makeup Lessons</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Special Occasion Makeup')">Special Occasion Makeup</div>
-            
+
             <div class="svc-cat-title">Hair Removal Service</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Arm Hair Removal')">Arm Hair Removal</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Back Hair Removal')">Back Hair Removal</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Chest Hair Removal')">Chest Hair Removal</div>
@@ -456,14 +458,14 @@
             <div class="svc-opt" onclick="toggleSvc(this,'Facial Hair Removal')">Facial Hair Removal</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Leg Hair Removal')">Leg Hair Removal</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Stomach Hair Removal')">Stomach Hair Removal</div>
-            
+
             <div class="svc-cat-title">Waxing Hair Removal Service</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Bikini Waxing')">Bikini Waxing</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Chin Waxing')">Chin Waxing</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Eyebrow Waxing')">Eyebrow Waxing</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Mens Waxing')">Mens Waxing</div>
-            
+
             </div>
 
         </div>
@@ -598,10 +600,6 @@
 <a href="https://wa.me/16477176747" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
-
-<div class="cursor-glow"></div>
-
-</body>
 
 <div class="cursor-glow"></div>
 
