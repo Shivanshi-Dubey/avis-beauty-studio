@@ -1800,3 +1800,129 @@ body{
   padding-top: 1rem;
 }
 
+/* ═══════════════════════════════════════
+   ADDITIONS — sync with index.html
+═══════════════════════════════════════ */
+
+/* ── SERVICE CARD IMAGE ── */
+.svc-img{
+  width:100%;
+  height:190px;
+  overflow:hidden;
+  border-radius:14px;
+  margin-bottom:1.4rem;
+}
+.svc-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .6s ease;
+}
+.svc-card:hover .svc-img img{
+  transform:scale(1.08);
+}
+
+/* ── DEAL CARD TIERS ── */
+.deal-card.silver{ border-color:rgba(192,192,192,.35); }
+.deal-card.silver .deal-badge,
+.deal-card.silver .new-price{ color:#c7c7c7; }
+
+.deal-card.gold{ border-color:rgba(212,175,55,.4); }
+/* gold uses the existing default gold accent */
+
+.deal-card.diamond{ border-color:rgba(185,242,255,.4); }
+.deal-card.diamond .deal-badge,
+.deal-card.diamond .new-price{ color:#9fe8ff; }
+
+.deal-card.platinum{
+  border-color:rgba(229,228,226,.5);
+  background:linear-gradient(160deg,#1c1c1c 0%,#141414 100%);
+}
+.deal-card.platinum .deal-badge,
+.deal-card.platinum .new-price{ color:#e5e4e2; }
+
+/* ── INSTAGRAM EMBED ── */
+.insta-embed-wrap{
+  max-width:640px;
+  margin:2.5rem auto 0;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(212,175,55,.15);
+}
+.snapwidget-widget{
+  width:100%;
+  border:none;
+  display:block;
+}
+.insta-featured-title{
+  margin-top:4rem;
+  margin-bottom:1.5rem;
+  color:var(--gold);
+  font-size:.8rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.insta-grid video{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  border-radius:24px;
+  background:#000;
+  display:block;
+  transition:.45s ease;
+}
+.insta-grid video:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 25px 60px rgba(212,175,55,.22);
+}
+
+/* ── NEWSLETTER ── */
+.newsletter-sec{
+  background:var(--charcoal);
+  padding:6rem 5rem;
+  text-align:center;
+}
+.newsletter-inner{
+  max-width:560px;
+  margin:0 auto;
+}
+.newsletter-inner .sec-title{ color:#fff; }
+.newsletter-inner .sec-title em{ color:var(--gold); }
+.newsletter-inner .sec-lead{ margin:0 auto 2rem; }
+.newsletter-form{
+  display:flex;
+  gap:.8rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.newsletter-form .f-input{
+  flex:1;
+  min-width:220px;
+  margin-bottom:0;
+}
+.newsletter-note{
+  margin-top:1.2rem;
+  font-size:.72rem;
+  color:var(--text-on-dark-muted);
+}
+
+/* ── CONTACT FORM GROUP ── */
+.f-group{
+  margin-bottom:1.2rem;
+}
+.f-group .f-input{
+  margin-bottom:0;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .insta-grid{ grid-template-columns:1fr 1fr; }
+  .newsletter-sec{ padding:4rem 1.5rem; }
+  .newsletter-form{ flex-direction:column; }
+  .newsletter-form .f-input{ width:100%; }
+}
+@media(max-width:600px){
+  .insta-grid{ grid-template-columns:1fr; }
+  .insta-grid video{ height:260px; }
+}
