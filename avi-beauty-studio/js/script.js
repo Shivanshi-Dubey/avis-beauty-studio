@@ -277,6 +277,16 @@ window.addEventListener('load',()=>{
   /* ─────────────────────────────────────────
    GENDER FILTER (service.html only —
    safely does nothing on pages without it)
+
+   FIX: previously this only toggled row/card
+   display, but the category cards are collapsed
+   (accordion) by default — so clicking "For Her"
+   / "For Him" changed the content underneath but
+   nobody could SEE the change unless they also
+   clicked open every card. Now the filter also
+   auto-opens every card that still has matching
+   rows after filtering, and collapses cards that
+   end up empty, so the result is visible instantly.
 ───────────────────────────────────────── */
 
 (function () {
@@ -287,6 +297,42 @@ window.addEventListener('load',()=>{
   const filterBtns = filterBar.querySelectorAll('.gf-btn');
   const svcCards = document.querySelectorAll('.svc-grid .svc-card');
 
+  function applyFilter(filter) {
+
+    svcCards.forEach(card => {
+
+      const rows = card.querySelectorAll('.svc-row');
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+
+        const g = row.dataset.g || 'unisex';
+
+        const match =
+          filter === 'all' ||
+          g === filter ||
+          (filter !== 'unisex' && g === 'unisex');
+
+        row.style.display = match ? 'flex' : 'none';
+        if (match) visibleCount++;
+
+      });
+
+      card.style.display = visibleCount > 0 ? '' : 'none';
+
+      // auto-expand cards that have results for this filter,
+      // collapse ones that don't — this is what makes the
+      // "For Her" / "For Him" difference actually visible
+      if (visibleCount > 0) {
+        card.classList.add('open');
+      } else {
+        card.classList.remove('open');
+      }
+
+    });
+
+  }
+
   filterBtns.forEach(btn => {
 
     btn.addEventListener('click', () => {
@@ -294,30 +340,7 @@ window.addEventListener('load',()=>{
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const filter = btn.dataset.filter; // 'all' | 'her' | 'him' | 'unisex'
-
-      svcCards.forEach(card => {
-
-        const rows = card.querySelectorAll('.svc-row');
-        let visibleCount = 0;
-
-        rows.forEach(row => {
-
-          const g = row.dataset.g || 'unisex';
-
-          const match =
-            filter === 'all' ||
-            g === filter ||
-            (filter !== 'unisex' && g === 'unisex');
-
-          row.style.display = match ? 'flex' : 'none';
-          if (match) visibleCount++;
-
-        });
-
-        card.style.display = visibleCount > 0 ? '' : 'none';
-
-      });
+      applyFilter(btn.dataset.filter);
 
     });
 

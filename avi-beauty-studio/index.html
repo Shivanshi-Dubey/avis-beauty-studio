@@ -19,21 +19,15 @@
 <body>
 
   <div class="lux-loader" id="luxLoader">
-
     <div class="loader-inner">
-  
       <div class="loader-logo">
         Avi's <span>Beauty</span> Studio
       </div>
-  
       <div class="loader-line"></div>
-  
       <p class="loader-text">
         Luxury Beauty Experience
       </p>
-  
     </div>
-  
   </div>
 
 <!-- ═══════════════════════════════════════
@@ -418,7 +412,7 @@
       <!-- Right Side -->
       <div class="laser-img">
         <video autoplay muted loop playsinline>
-          <source src="images/laser.mp4" type="video/mp4">
+          <source src="images/laser .mp4" type="video/mp4">
         </video>
     </div>
 
@@ -485,21 +479,6 @@
   Follow Our <em>Beauty</em> Journey
   </h2>
 
-  <!-- LIVE INSTAGRAM FEED
-       Sign up free at snapwidget.com (or elfsight.com), connect your
-       @avisbeautystudio account, and replace YOUR_WIDGET_ID below with
-       the ID SnapWidget gives you. This updates automatically whenever
-       you post — no manual uploads needed. -->
-  <div class="insta-embed-wrap">
-    <iframe src="https://snapwidget.com/embed/YOUR_WIDGET_ID"
-      class="snapwidget-widget"
-      allowtransparency="true"
-      frameborder="0"
-      scrolling="no"
-      title="Avi's Beauty Studio Instagram Feed">
-    </iframe>
-  </div>
-
   <div class="insta-featured-title">Featured Transformations</div>
 
   <div class="insta-grid">
@@ -530,18 +509,17 @@
 
 <!-- ═══════════════════════════════════════
      NEWSLETTER / LEAD CAPTURE
-     Sign up free at formspree.io, create a form, and replace
-     YOUR_FORM_ID below with the ID they give you. Every signup
-     gets emailed straight to your inbox — no backend needed.
+     No third-party service — opens the visitor's
+     email app addressed to the studio (see script.js
+     for the mailto handler, id="newsletterForm").
 ════════════════════════════════════════ -->
 <section class="newsletter-sec">
   <div class="newsletter-inner">
     <div class="sec-tag" style="justify-content:center;">Stay Connected</div>
     <h2 class="sec-title">Join Our <em>Beauty</em> Circle</h2>
     <p class="sec-lead">Get exclusive offers, seasonal packages and beauty tips straight to your inbox.</p>
-    <form class="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form class="newsletter-form" id="newsletterForm">
       <input type="email" name="email" class="f-input" placeholder="Enter your email address" required>
-      <input type="hidden" name="_subject" value="New Newsletter Signup — Avi's Beauty Studio">
       <button type="submit" class="btn-gold">Subscribe</button>
     </form>
     <p class="newsletter-note">No spam, ever. Unsubscribe anytime.</p>
@@ -882,7 +860,7 @@
         <div class="svc-pick" style="display:none;">
 
             <div class="svc-cat-title">Hair Salon</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Hair Coloring')">Hair Coloring</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Hair Styling')">Hair Styling</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Balayage')">Balayage</div>
@@ -906,31 +884,31 @@
             <div class="svc-opt" onclick="toggleSvc(this,'Ombre Hair Color')">Ombre Hair Color</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Perms')">Perms</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Updos')">Updos</div>
-            
+
             <div class="svc-cat-title">Stylist</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Beard Curl')">Beard Curl</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Beard Perm')">Beard Perm</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Moustache Treadlock')">Moustache Treadlock</div>
-            
+
             <div class="svc-cat-title">Barber Shop</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Waxing')">Waxing</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Shampoo & Conditioning')">Shampoo & Conditioning</div>
-            
+
             <div class="svc-cat-title">Hairdresser</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Makeup Services')">Makeup Services</div>
-            
+
             <div class="svc-cat-title">Beauty Salon</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Brazilian Waxing')">Brazilian Waxing</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Bridal Services')">Bridal Services</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Eyebrow Shaping')">Eyebrow Shaping</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Facials')">Facials</div>
-            
+
             <div class="svc-cat-title">Make-up Artist</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Beauty Makeovers')">Beauty Makeovers</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Bridal Makeup')">Bridal Makeup</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Makeovers')">Makeovers</div>
@@ -939,9 +917,9 @@
             <div class="svc-opt" onclick="toggleSvc(this,'Photography Makeup')">Photography Makeup</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Private Makeup Lessons')">Private Makeup Lessons</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Special Occasion Makeup')">Special Occasion Makeup</div>
-            
+
             <div class="svc-cat-title">Hair Removal Service</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Arm Hair Removal')">Arm Hair Removal</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Back Hair Removal')">Back Hair Removal</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Chest Hair Removal')">Chest Hair Removal</div>
@@ -949,14 +927,14 @@
             <div class="svc-opt" onclick="toggleSvc(this,'Facial Hair Removal')">Facial Hair Removal</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Leg Hair Removal')">Leg Hair Removal</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Stomach Hair Removal')">Stomach Hair Removal</div>
-            
+
             <div class="svc-cat-title">Waxing Hair Removal Service</div>
-            
+
             <div class="svc-opt" onclick="toggleSvc(this,'Bikini Waxing')">Bikini Waxing</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Chin Waxing')">Chin Waxing</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Eyebrow Waxing')">Eyebrow Waxing</div>
             <div class="svc-opt" onclick="toggleSvc(this,'Mens Waxing')">Mens Waxing</div>
-            
+
             </div>
 
         </div>
@@ -1091,10 +1069,6 @@
 <a href="https://wa.me/16477176747" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
-
-<div class="cursor-glow"></div>
-
-</body>
 
 <div class="cursor-glow"></div>
 
