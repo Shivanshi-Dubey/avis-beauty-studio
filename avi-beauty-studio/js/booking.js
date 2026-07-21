@@ -28,22 +28,45 @@
     /* ─────────────────────────────────────────
        OPEN / CLOSE
     ───────────────────────────────────────── */
-    window.openModal = function (category) {
+    window.openModal = function (category, presetService) {
       document.getElementById('overlay').classList.add('open');
       document.body.style.overflow = 'hidden';
 
       const serviceSelect = document.getElementById('serviceSelect');
       const laserSelect = document.getElementById('laserServiceSelect');
       const svcHeading = document.getElementById('svcHeading');
+      const presetNote = document.getElementById('presetServiceNote');
 
-      if (category === 'laser') {
-        if (serviceSelect) { serviceSelect.value = ''; serviceSelect.style.display = 'none'; }
-        if (laserSelect)   { laserSelect.value = '';   laserSelect.style.display = 'block'; }
-        if (svcHeading) svcHeading.textContent = 'Select Laser Treatment';
+      if (presetService) {
+
+        // Service already known (Package / Laser deal) — lock it in,
+        // hide the pickers, skip straight to selecting a stylist.
+        B.services = [presetService];
+
+        if (serviceSelect) serviceSelect.style.display = 'none';
+        if (laserSelect)   laserSelect.style.display = 'none';
+        if (svcHeading) svcHeading.textContent = 'Your Selection';
+
+        if (presetNote) {
+          presetNote.style.display = 'block';
+          presetNote.textContent = 'Booking: ' + presetService;
+        }
+
       } else {
-        if (serviceSelect) { serviceSelect.value = ''; serviceSelect.style.display = 'block'; }
-        if (laserSelect)   { laserSelect.value = '';   laserSelect.style.display = 'none'; }
-        if (svcHeading) svcHeading.textContent = 'Select Services';
+
+        B.services = [];
+        if (presetNote) presetNote.style.display = 'none';
+
+        if (category === 'laser') {
+          if (serviceSelect) { serviceSelect.value = ''; serviceSelect.style.display = 'none'; }
+          if (laserSelect)   { laserSelect.value = '';   laserSelect.style.display = 'block'; }
+          if (svcHeading) svcHeading.textContent = 'Select Laser Treatment';
+        } else {
+          if (serviceSelect) { serviceSelect.value = ''; serviceSelect.style.display = 'block'; }
+          if (laserSelect)   { laserSelect.value = '';   laserSelect.style.display = 'none'; }
+          if (svcHeading) svcHeading.textContent = 'Select Services';
+        }
+
       }
 
       buildDates();
@@ -62,8 +85,10 @@
               .forEach(e => e.classList.remove('on'));
       const serviceSelect = document.getElementById('serviceSelect');
       const laserSelect = document.getElementById('laserServiceSelect');
-      if (serviceSelect) serviceSelect.value = '';
+      const presetNote = document.getElementById('presetServiceNote');
+      if (serviceSelect) { serviceSelect.value = ''; serviceSelect.style.display = 'block'; }
       if (laserSelect) laserSelect.value = '';
+      if (presetNote) presetNote.style.display = 'none';
   
       // Reset modal to initial state
       document.getElementById('mainBody').style.display = 'block';

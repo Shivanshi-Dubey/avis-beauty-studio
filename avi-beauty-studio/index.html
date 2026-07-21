@@ -30,9 +30,6 @@
     </div>
   </div>
 
-<!-- ═══════════════════════════════════════
-     NAVBAR
-════════════════════════════════════════ -->
 <nav id="navbar">
   <a href="index.html" class="logo">
     <img src="logo.png" class="logo-icon" alt="Avi's Beauty Studio Logo">
@@ -295,7 +292,7 @@
       </div>
 
       <button class="btn-gold"
-        onclick="openModal()">
+        onclick="openModal(null, 'Silver Deal - Glow Essentials')">
         Book Package
       </button>
 
@@ -320,7 +317,7 @@
       </div>
 
       <button class="btn-gold"
-        onclick="openModal()">
+        onclick="openModal(null, 'Gold Deal - Luxury Hair Spa')">
         Book Package
       </button>
 
@@ -345,7 +342,7 @@
       </div>
 
       <button class="btn-gold"
-        onclick="openModal()">
+        onclick="openModal(null, 'Diamond Deal - Radiance Therapy')">
         Book Package
       </button>
 
@@ -370,7 +367,7 @@
       </div>
 
       <button class="btn-gold"
-        onclick="openModal()">
+        onclick="openModal(null, 'Platinum Deal - Ultimate Makeover')">
         Book Package
       </button>
 
@@ -404,7 +401,7 @@
               <div class="laser-perk"><div class="perk-dot"></div>Free consultation session</div>
           </div>
 
-          <button class="btn-gold" style="margin-top:2rem;" onclick="openModal()">
+          <button class="btn-gold" style="margin-top:2rem;" onclick="openModal(null, 'Laser Hair Removal')">
               Book Laser Session
           </button>
       </div>
@@ -508,12 +505,6 @@
 
   </section>
 
-<!-- ═══════════════════════════════════════
-     NEWSLETTER / LEAD CAPTURE
-     No third-party service — opens the visitor's
-     email app addressed to the studio (see script.js
-     for the mailto handler, id="newsletterForm").
-════════════════════════════════════════ -->
 <section class="newsletter-sec">
   <div class="newsletter-inner">
     <div class="sec-tag" style="justify-content:center;">Stay Connected</div>
@@ -533,13 +524,13 @@
   <div class="testi-grid">
     <div class="testi-card">
       <div class="stars">★★★★★</div>
-      <p class="testi-text">Awesome service, it was such a great experience, felt like you are taken are as baby… extremely knowledgeable and experienced staff helping you with what’s being done and what make sense as per your skin, hair and your style… no rush session and make sure you are served with all your needs and fully satisfied.</p>
+      <p class="testi-text">Awesome service, it was such a great experience, felt like you are taken are as baby… extremely knowledgeable and experienced staff helping you with what's being done and what make sense as per your skin, hair and your style… no rush session and make sure you are served with all your needs and fully satisfied.</p>
       <div class="testi-name">Shyam Bansal</div>
       <div class="testi-loc">Ontario, Canada</div>
     </div>
     <div class="testi-card">
       <div class="stars">★★★★★</div>
-      <p class="testi-text">I had an amazing experience at Avi’s Beauty Salon. I recently done my hair color and highlights and i am in love with my new look. I have got tons of compliments already. I had it done for my Office Christmas party and the results were absolutely stunning. Staff is super friendly and nice. I strongly recommend to everyone.<p>
+      <p class="testi-text">I had an amazing experience at Avi's Beauty Salon. I recently done my hair color and highlights and i am in love with my new look. I have got tons of compliments already. I had it done for my Office Christmas party and the results were absolutely stunning. Staff is super friendly and nice. I strongly recommend to everyone.<p>
       <div class="testi-name">Kirandeep Kaur</div>
       <div class="testi-loc">Ontario, Canada</div>
     </div>
@@ -801,7 +792,10 @@
       <!-- PAGE 1 -->
       <div class="pg show" id="pg1">
 
-        <h3>Select Services</h3>
+        <h3 id="svcHeading">Select Services</h3>
+
+        <div id="presetServiceNote" style="display:none; margin-bottom:1rem; padding:.9rem 1.2rem; border-radius:12px; background:rgba(212,175,55,.12); border:1px solid rgba(212,175,55,.3); color:#fff; font-weight:600;"></div>
+
         <select id="serviceSelect" class="f-input" onchange="pickServiceFromDropdown(this)">
           <option value="">Select a service</option>
           <option value="Hair Coloring">Hair Coloring</option>
