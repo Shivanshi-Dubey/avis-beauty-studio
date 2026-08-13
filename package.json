@@ -1,0 +1,22 @@
+{
+  "name": "avi's-beauty-studio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shivanshi-Dubey/avis-beauty-studio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shivanshi-Dubey/avis-beauty-studio/issues"
+  },
+  "homepage": "https://github.com/Shivanshi-Dubey/avis-beauty-studio#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2"
+  }
+}

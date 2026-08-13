@@ -48,13 +48,13 @@
     window.addEventListener('scroll', () => {
 
       if (window.scrollY > 60) {
-        navbar.style.boxShadow = '0 8px 32px rgba(0,0,0,.35)';
-        navbar.style.background = 'rgba(11,11,12,.92)';
-        navbar.style.borderBottomColor = 'rgba(212,175,55,.18)';
+        navbar.style.boxShadow = '0 8px 32px rgba(45,26,36,.25)';
+        navbar.style.background = 'rgba(45,26,36,.96)';
+        navbar.style.borderBottomColor = 'rgba(201,168,108,.22)';
       } else {
         navbar.style.boxShadow = 'none';
-        navbar.style.background = 'rgba(11,11,12,.72)';
-        navbar.style.borderBottomColor = 'rgba(212,175,55,.12)';
+        navbar.style.background = 'rgba(45,26,36,.78)';
+        navbar.style.borderBottomColor = 'rgba(201,168,108,.15)';
       }
 
     });
@@ -155,7 +155,7 @@
     });
 
     const revealEls = document.querySelectorAll(
-      '.svc-card,.deal-card,.testi-card,.g-item,.owner-box,.hours-box,.about-founder,.about-highlight'
+      '.svc-card,.deal-card,.testi-card,.g-item,.owner-box,.hours-box,.about-founder,.about-highlight,[data-reveal],.pillar-card,.cat-card'
     );
     
     const revealOnScroll = () => {
