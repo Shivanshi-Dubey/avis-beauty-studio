@@ -1,0 +1,45 @@
+{
+  "maps_urls": [],
+  "downloaded": [
+    {
+      "file": "bia-01.png",
+      "bytes": 53677,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/01/07/d11758af18cd71d2b04e12c9df69aa36.png"
+    },
+    {
+      "file": "bia-02.jpg",
+      "bytes": 35857,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/02/05/f94fb076d545a1c6eb58d4c27b0914b4.jpg"
+    },
+    {
+      "file": "bia-03.jpg",
+      "bytes": 86876,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/02/11/abb81db9e97d1f109cfbe0caeff0811e.jpg"
+    },
+    {
+      "file": "bia-04.png",
+      "bytes": 31922,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/02/12/c4ccb255b20cc5cc624dc1a16393505c.png"
+    }
+  ],
+  "errors": [],
+  "bia": {
+    "count": 4
+  },
+  "maps_urls_count": 0,
+  "maps_urls_sample": [],
+  "facebook": [
+    {
+      "url": "https://www.facebook.com/avisbeautystudio",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "url": "https://m.facebook.com/avisbeautystudio",
+      "error": "HTTP Error 400: Bad Request"
+    }
+  ]
+}

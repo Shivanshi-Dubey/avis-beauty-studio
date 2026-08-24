@@ -1,0 +1,140 @@
+{
+  "count": 15,
+  "downloaded": [
+    {
+      "file": "google-01.jpg",
+      "bytes": 37727,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/02/04/e067fd33125fd938e46c3d170de8ad7e.jpg"
+    },
+    {
+      "file": "google-02.jpg",
+      "bytes": 46146,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/02/05/4e3388f845d7e71dc3f5df76e6672e86.jpg"
+    },
+    {
+      "file": "google-03.jpg",
+      "bytes": 12447,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/02/05/ca731b5293e8cfa314e8eab1ee626258.jpg"
+    },
+    {
+      "file": "google-04.jpg",
+      "bytes": 37055,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/02/07/34afd77ddd0fa852c57bccb6352f05b8.jpg"
+    },
+    {
+      "file": "google-05.jpg",
+      "bytes": 86876,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/02/11/abb81db9e97d1f109cfbe0caeff0811e.jpg"
+    },
+    {
+      "file": "google-06.png",
+      "bytes": 31922,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/02/12/c4ccb255b20cc5cc624dc1a16393505c.png"
+    },
+    {
+      "file": "google-07.png",
+      "bytes": 1621079,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/03/16/f422b2e5274a065623228508a2991fb8.png"
+    },
+    {
+      "file": "google-08.png",
+      "bytes": 42332,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/05/05/bea1688a72f394d93042c7a055050588.png"
+    },
+    {
+      "file": "google-09.jpg",
+      "bytes": 9986,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/05/09/ffb81911cad623f8c15f79eb91e1114c.jpg"
+    },
+    {
+      "file": "google-10.jpg",
+      "bytes": 269197,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/05/11/50ae5d2d70a94112230e58c0511ca305.jpg"
+    },
+    {
+      "file": "google-11.png",
+      "bytes": 74669,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/05/26/1d58df5d3274c2065a37c6756c1b4696.png"
+    },
+    {
+      "file": "google-12.jpg",
+      "bytes": 287471,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/06/27/0e050a82f992e528f22221164c35ccea.jpg"
+    },
+    {
+      "file": "google-13.png",
+      "bytes": 80575,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/07/07/c45554eee635cd57b89fbc51348f6a4e.png"
+    },
+    {
+      "file": "google-14.jpg",
+      "bytes": 105713,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/07/11/7ca9d18be59b47703225225081be8f1e.jpg"
+    },
+    {
+      "file": "google-15.jpg",
+      "bytes": 37150,
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/upl/i/belle_river_bia/07/23/eca760e429e68d12754e4a65ba27b9fa.jpg"
+    }
+  ],
+  "sources_tried": [
+    {
+      "source": "google_maps",
+      "url": "https://www.google.com/maps/search/Avi%27s+Beauty+Studio+556+Notre+Dame+Belle+River",
+      "status": 200,
+      "note": "no extractable venue photo URLs in static HTML"
+    },
+    {
+      "source": "facebook",
+      "url": "https://www.facebook.com/avisbeautystudio",
+      "status": null,
+      "note": "og:image missing this fetch; page may vary by region"
+    },
+    {
+      "source": "fresha",
+      "url": "https://www.fresha.com/lvp/avis-beauty-studio-notre-dame-street-belle-river-Mxze24",
+      "status": 200,
+      "note": "stock placeholder only on Avi listing"
+    },
+    {
+      "source": "yelp",
+      "url": "https://www.yelp.ca/biz/avis-beauty-studio-belle-river",
+      "status": 403,
+      "note": "403 bot block"
+    },
+    {
+      "source": "yelp",
+      "url": "https://www.yelp.com/biz/avis-beauty-studio-belle-river",
+      "status": 403,
+      "note": "403 bot block"
+    },
+    {
+      "source": "belleriver_bia",
+      "url": "https://www.belleriverbia.com/live-here/Beauty-and-Spa-263/avis-beauty-studio",
+      "status": 200,
+      "note": "queued 16 BIA asset URLs"
+    },
+    {
+      "source": "google_image_search",
+      "url": "https://www.google.com/search?q=avisbeautystudio+belle+river+salon&tbm=isch",
+      "status": 200,
+      "note": "0 imgurl (JS shell)"
+    }
+  ],
+  "output_dir": "Z:\\avi-beauty-studio\\images\\google"
+}

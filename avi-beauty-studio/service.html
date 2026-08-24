@@ -286,8 +286,8 @@ nav.scrolled{ height:66px; background:rgba(251,247,241,.95); }
   cursor:pointer; transition:.4s ease; position:relative; overflow:hidden;
 }
 .svc-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-lift); border-color:var(--lav-mid); }
-.svc-img{ position:relative; width:100%; height:200px; border-radius:14px; overflow:hidden; margin-bottom:1.3rem; }
-.svc-img img{ width:100%; height:100%; object-fit:cover; object-position:center center; transition:transform .6s ease; }
+.svc-img{ position:relative; width:100%; aspect-ratio:1/1; border-radius:14px; overflow:hidden; margin-bottom:1.3rem; background:var(--lav-pale); }
+.svc-img img{ width:100%; height:100%; object-fit:cover; object-position:center top; transition:transform .6s ease; }
 .svc-card:hover .svc-img img{ transform:scale(1.05); }
 .svc-num{
   position:absolute; top:.75rem; right:.75rem; z-index:2;
@@ -853,7 +853,7 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
     </div>
 
     <div class="svc-card" data-reveal>
-      <div class="svc-img"><img src="images/services/bleach.png" alt="Bleach treatment at Avi's Beauty Studio" loading="lazy"><span class="svc-num">03</span></div><h3 onclick="toggleCategory(this)">Bleach</h3>
+      <div class="svc-img"><img src="images/services/bleach.jpg" alt="Bleach treatment at Avi's Beauty Studio" loading="lazy"><span class="svc-num">03</span></div><h3 onclick="toggleCategory(this)">Bleach</h3>
       <div class="svc-list">
         <div class="svc-row" data-g="unisex"><span>Face Bleach</span><span>$20</span></div>
         <div class="svc-row" data-g="unisex"><span>Back Bleach</span><span>$35</span></div>
@@ -906,7 +906,7 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
     </div>
 
     <div class="svc-card" data-reveal>
-      <div class="svc-img"><img src="images/services/hairstyle.png" alt="Hairstyling service at Avi's Beauty Studio" loading="lazy"><span class="svc-num">07</span></div><h3 onclick="toggleCategory(this)">Hairstyle</h3>
+      <div class="svc-img"><img src="images/services/hairstyle.jpg" alt="Hairstyling service at Avi's Beauty Studio" loading="lazy"><span class="svc-num">07</span></div><h3 onclick="toggleCategory(this)">Hairstyle</h3>
       <div class="svc-list">
         <div class="svc-row" data-g="female"><span>Party Hairstyles</span><span>$55+</span></div>
         <div class="svc-row" data-g="female"><span>Updo's</span><span>$45+</span></div>
