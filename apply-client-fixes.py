@@ -48,17 +48,17 @@ SERVICE_CARD_CSS_NEW = """.svc-card{
 }"""
 
 IMAGES = {
-    "Facial": "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&q=85&auto=format&fit=crop",
-    "Waxing": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=900&q=85&auto=format&fit=crop",
-    "Bleach": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=85&auto=format&fit=crop",
-    "Threading": "https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=900&q=85&auto=format&fit=crop",
-    "Haircare": "https://images.unsplash.com/photo-1560066984-138d4ef1c2b3?w=900&q=85&auto=format&fit=crop",
-    "Makeup": "https://images.unsplash.com/photo-1487412948138-5b3b995efd36?w=900&q=85&auto=format&fit=crop",
-    "Hairstyle": "https://images.unsplash.com/photo-1492106087820-71f1a00d81d4?w=900&q=85&auto=format&fit=crop",
+    "Facial": "images/services/facial.jpg",
+    "Waxing": "images/services/waxing.jpg",
+    "Bleach": "images/services/bleach.jpg",
+    "Threading": "images/services/threading.jpg",
+    "Haircare": "images/services/haircare.jpg",
+    "Makeup": "images/services/makeup.jpg",
+    "Hairstyle": "images/services/hairstyle.jpg",
 }
 
 LASER_IMG_OLD = 'src="https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=700&q=80" alt="Laser hair removal"'
-LASER_IMG_NEW = 'src="https://images.unsplash.com/photo-1629909613654-28e377c37b26?w=900&q=85&auto=format&fit=crop" alt="Laser hair removal treatment"'
+LASER_IMG_NEW = 'src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=900&q=85&auto=format&fit=crop" alt="Laser hair removal treatment"'
 
 LOADER_JS_OLD = """window.addEventListener('load', ()=>{
   setTimeout(()=>{ document.getElementById('loader').classList.add('hide'); }, 700);
