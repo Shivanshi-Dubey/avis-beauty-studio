@@ -50,11 +50,11 @@ SERVICE_CARD_CSS_NEW = """.svc-card{
 IMAGES = {
     "Facial": "images/services/facial.jpg",
     "Waxing": "images/services/waxing.jpg",
-    "Bleach": "images/services/bleach.jpg",
+    "Bleach": "images/services/bleach.png",
     "Threading": "images/services/threading.jpg",
     "Haircare": "images/services/haircare.jpg",
     "Makeup": "images/services/makeup.jpg",
-    "Hairstyle": "images/services/hairstyle.jpg",
+    "Hairstyle": "images/services/hairstyle.png",
 }
 
 LASER_IMG_OLD = 'src="https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=700&q=80" alt="Laser hair removal"'
