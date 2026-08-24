@@ -103,7 +103,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .loader.hide{ opacity:0; visibility:hidden; }
 .loader-mark{ width:76px; height:76px; opacity:0; animation:loaderMarkIn 1s .1s ease forwards; }
 @keyframes loaderMarkIn{ from{ opacity:0; transform:translateY(-8px) scale(.9);} to{ opacity:1; transform:translateY(0) scale(1);} }
-.loader-word{ font-family:'Fraunces',serif; font-size:2.4rem; color:#fff; letter-spacing:.02em; }
+.loader-word{ font-family:'Fraunces',serif; font-size:2.4rem; color:#fff; letter-spacing:.02em; line-height:1.15; padding-bottom:.12em; }
 .loader-word em{ color:var(--gold-light); font-style:italic; }
 .loader-bar{ width:180px; height:1px; background:rgba(255,255,255,.18); position:relative; overflow:hidden; }
 .loader-bar::after{ content:''; position:absolute; inset:0; width:40%; background:var(--gold-light); animation:loaderSlide 1.3s ease-in-out infinite; }
@@ -537,7 +537,7 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
 .footer-grid{ display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3.4rem; }
 .footer-col h3{ font-family:'Fraunces',serif; font-size:1.7rem; font-weight:400; margin-bottom:1rem; }
 .footer-brand{ display:flex; align-items:center; gap:.8rem; margin-bottom:1rem; }
-.footer-brand h3{ margin-bottom:0; }
+.footer-brand h3{ margin-bottom:0; line-height:1.15; padding-bottom:.1em; }
 .footer-mark{ width:44px; height:44px; flex-shrink:0; opacity:.95; }
 .footer-col h3 em{ font-style:italic; color:var(--gold-light); }
 .footer-col h4{ color:var(--gold-light); margin-bottom:1.2rem; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; }
@@ -732,7 +732,7 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html" class="">Home</a></li>
     <li><a href="about.html" class="active">About</a></li>
-    <li><a href="services.html" class="">Services</a></li>
+    <li><a href="service.html" class="">Services</a></li>
     <li><a href="packages.html" class="">Packages</a></li>
     <li><a href="laser.html" class="">Laser</a></li>
     <li><a href="reels.html" class="">Reels</a></li>
@@ -824,9 +824,9 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
       </div>
     </div>
     <div class="footer-col"><h4>Services</h4><ul>
-      <li><a href="services.html">Hair Styling</a></li><li><a href="services.html">Skin &amp; Facials</a></li>
-      <li><a href="laser.html">Laser Hair Removal</a></li><li><a href="services.html">Waxing &amp; Threading</a></li>
-      <li><a href="services.html">Bridal Makeup</a></li></ul>
+      <li><a href="service.html">Hair Styling</a></li><li><a href="service.html">Skin &amp; Facials</a></li>
+      <li><a href="laser.html">Laser Hair Removal</a></li><li><a href="service.html">Waxing &amp; Threading</a></li>
+      <li><a href="service.html">Bridal Makeup</a></li></ul>
     </div>
     <div class="footer-col"><h4>Quick Links</h4><ul>
       <li><a href="about.html">About Us</a></li><li><a href="packages.html">Packages</a></li>
@@ -838,7 +838,7 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
       <p><a href="tel:+16477176747">+1 647-717-6747</a></p>
       <p>556 Notre Dame Street<br>Belle River, ON N0R 1A0</p>
       <p><a href="mailto:avisbeautystudio@gmail.com">avisbeautystudio@gmail.com</a></p>
-      <p class="footer-hours">Open daily · flexible bookings</p>
+      <p class="footer-hours">Mon 10–6 · Tue Closed · Wed–Sat 10–7 · Sun 10–5</p>
     </div>
   </div>
   <div class="footer-bottom">© 2026 Avi's Beauty Studio. All Rights Reserved.</div>
@@ -1077,7 +1077,13 @@ const AmbientMusic = (function(){
 
 /* ============ LOADER ============ */
 window.addEventListener('load', ()=>{
-  setTimeout(()=>{ document.getElementById('loader').classList.add('hide'); }, 700);
+  const loader = document.getElementById('loader');
+  if(sessionStorage.getItem('absSeen')){
+    loader.classList.add('hide');
+  } else {
+    sessionStorage.setItem('absSeen','1');
+    setTimeout(()=> loader.classList.add('hide'), 700);
+  }
 });
 
 /* ============ HERO SLIDESHOW ============ */
