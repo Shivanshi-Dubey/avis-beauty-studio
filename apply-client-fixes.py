@@ -58,7 +58,7 @@ IMAGES = {
 }
 
 LASER_IMG_OLD = 'src="https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=700&q=80" alt="Laser hair removal"'
-LASER_IMG_NEW = 'src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=900&q=85&auto=format&fit=crop" alt="Laser hair removal treatment"'
+LASER_IMG_NEW = 'src="images/laser-treatment.jpg" alt="Alma laser hair removal treatment at Avi\'s Beauty Studio"'
 
 LOADER_JS_OLD = """window.addEventListener('load', ()=>{
   setTimeout(()=>{ document.getElementById('loader').classList.add('hide'); }, 700);
