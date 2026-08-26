@@ -14,7 +14,7 @@
 
 /* ============================================================
    AVI'S BEAUTY STUDIO — Lavender & Cream Edition
-   Tokens
+   Tokens4
    Ink        #2C2438   deep plum-ink text
    Ink soft   #5B5068
    Cream      #FBF7F1   base
@@ -657,6 +657,21 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
 #bkRef{ color:var(--ink-soft); margin-bottom:1.6rem; }
 .err-msg{ color:#b34a5e; font-size:.78rem; margin-top:-.6rem; margin-bottom:1rem; display:none; }
 .err-msg.show{ display:block; }
+.modal.laser-mode{ width:min(760px,100%); }
+.laser-booking{ display:none; }
+.laser-booking.show{ display:block; }
+.laser-price-img{ width:100%; border-radius:14px; margin-bottom:1.2rem; border:1px solid var(--border); box-shadow:0 8px 24px rgba(69,57,105,.08); }
+.laser-price-note{ font-size:.78rem; color:var(--ink-soft); margin:-.4rem 0 1rem; }
+.laser-session-toggle{ display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin-bottom:1rem; }
+.laser-session-btn{ padding:.8rem; border:1px solid var(--border); border-radius:12px; cursor:pointer; text-align:center; font-size:.8rem; background:#fff; transition:.25s; }
+.laser-session-btn.on{ border-color:var(--lav); background:var(--lav-pale); color:var(--lav-deep); font-weight:700; }
+.laser-cat-tabs{ display:flex; gap:.5rem; margin-bottom:1rem; flex-wrap:wrap; }
+.laser-cat-tab{ padding:.55rem .95rem; border-radius:999px; border:1px solid var(--border); cursor:pointer; font-size:.72rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; background:#fff; transition:.25s; }
+.laser-cat-tab.on{ background:var(--lav); border-color:var(--lav); color:#fff; }
+.laser-areas{ max-height:220px; overflow-y:auto; display:flex; flex-direction:column; gap:.55rem; margin-bottom:1.2rem; padding-right:.2rem; }
+.laser-area-opt{ display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.8rem 1rem; border:1px solid var(--border); border-radius:12px; cursor:pointer; background:#fff; font-size:.82rem; transition:.25s; }
+.laser-area-opt.on{ border-color:var(--lav); background:var(--lav-pale); color:var(--lav-deep); font-weight:600; }
+.laser-area-opt .price{ font-weight:700; color:var(--lav-deep); white-space:nowrap; }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:1100px){
@@ -832,32 +847,51 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
       <div class="pg show" id="pg1">
         <h3 id="svcHeading">Select Services</h3>
         <div id="presetServiceNote" style="display:none; margin-bottom:1rem; padding:.9rem 1.2rem; border-radius:14px; background:var(--lav-pale); border:1px solid var(--border); color:var(--lav-deep); font-weight:700;"></div>
-        <div class="svc-pick" id="svcPick">
-          <div class="svc-cat-title">Hair Salon</div>
-          <div class="svc-opt" data-svc="Hair Coloring">Hair Coloring</div>
-          <div class="svc-opt" data-svc="Hair Styling">Hair Styling</div>
-          <div class="svc-opt" data-svc="Balayage">Balayage</div>
-          <div class="svc-opt" data-svc="Keratin Treatments">Keratin Treatments</div>
-          <div class="svc-opt" data-svc="Blowouts">Blowouts</div>
-          <div class="svc-opt" data-svc="Updos">Updos</div>
-          <div class="svc-cat-title">Beauty Salon</div>
-          <div class="svc-opt" data-svc="Facials">Facials</div>
-          <div class="svc-opt" data-svc="Eyebrow Shaping">Eyebrow Shaping</div>
-          <div class="svc-opt" data-svc="Brazilian Waxing">Brazilian Waxing</div>
-          <div class="svc-opt" data-svc="Body Waxing">Body Waxing</div>
-          <div class="svc-cat-title">Make-up Artist</div>
-          <div class="svc-opt" data-svc="Bridal Makeup">Bridal Makeup</div>
-          <div class="svc-opt" data-svc="Party Makeup">Party Makeup</div>
-          <div class="svc-opt" data-svc="Photography Makeup">Photography Makeup</div>
-          <div class="svc-cat-title">Laser</div>
-          <div class="svc-opt" data-svc="Laser Hair Removal">Laser Hair Removal</div>
+
+        <div id="standardBooking">
+          <div class="svc-pick" id="svcPick">
+            <div class="svc-cat-title">Hair Salon</div>
+            <div class="svc-opt" data-svc="Hair Coloring">Hair Coloring</div>
+            <div class="svc-opt" data-svc="Hair Styling">Hair Styling</div>
+            <div class="svc-opt" data-svc="Balayage">Balayage</div>
+            <div class="svc-opt" data-svc="Keratin Treatments">Keratin Treatments</div>
+            <div class="svc-opt" data-svc="Blowouts">Blowouts</div>
+            <div class="svc-opt" data-svc="Updos">Updos</div>
+            <div class="svc-cat-title">Beauty Salon</div>
+            <div class="svc-opt" data-svc="Facials">Facials</div>
+            <div class="svc-opt" data-svc="Eyebrow Shaping">Eyebrow Shaping</div>
+            <div class="svc-opt" data-svc="Brazilian Waxing">Brazilian Waxing</div>
+            <div class="svc-opt" data-svc="Body Waxing">Body Waxing</div>
+            <div class="svc-cat-title">Make-up Artist</div>
+            <div class="svc-opt" data-svc="Bridal Makeup">Bridal Makeup</div>
+            <div class="svc-opt" data-svc="Party Makeup">Party Makeup</div>
+            <div class="svc-opt" data-svc="Photography Makeup">Photography Makeup</div>
+            <div class="svc-cat-title">Laser</div>
+            <div class="svc-opt" data-svc="Laser Hair Removal">Laser Hair Removal</div>
+          </div>
+
+          <h3>Select Stylist</h3>
+          <div class="staff-grid" id="staffSection">
+            <div class="staff-c" data-staff="Raman Batth">Raman Batth</div>
+            <div class="staff-c" data-staff="Senior Stylist">Senior Stylist</div>
+          </div>
         </div>
 
-        <h3>Select Stylist</h3>
-        <div class="staff-grid">
-          <div class="staff-c" data-staff="Raman Batth">Raman Batth</div>
-          <div class="staff-c" data-staff="Senior Stylist">Senior Stylist</div>
+        <div id="laserBooking" class="laser-booking">
+          <img src="images/laser-price-list.png" alt="Laser hair removal price list at Avi's Beauty Studio" class="laser-price-img" loading="lazy">
+          <p class="laser-price-note">Select your treatment area and session package below. Free consultation available.</p>
+          <div class="laser-session-toggle">
+            <button type="button" class="laser-session-btn on" data-sessions="1">1 Session</button>
+            <button type="button" class="laser-session-btn" data-sessions="6">6 Sessions (Package)</button>
+          </div>
+          <div class="laser-cat-tabs" id="laserCatTabs">
+            <button type="button" class="laser-cat-tab on" data-cat="women">Women</button>
+            <button type="button" class="laser-cat-tab" data-cat="men">Men</button>
+            <button type="button" class="laser-cat-tab" data-cat="body">Body (Women)</button>
+          </div>
+          <div class="laser-areas" id="laserAreas"></div>
         </div>
+
         <p class="err-msg" id="err1">Please choose at least one service and a stylist.</p>
         <button class="btn btn-primary" onclick="validateStep1()">Continue</button>
       </div>
@@ -1271,13 +1305,120 @@ if(document.getElementById('contactSubmit')){
 
 /* ============ BOOKING MODAL ============ */
 let booking = { services:[], staff:null, date:null, time:null };
+let laserMode = false;
+let laserSessionCount = 1;
+let laserCategory = 'women';
+let laserSelections = [];
+
+const LASER_PRICES = {
+  women: [
+    { area: 'Full Face', one: 120, six: 675 },
+    { area: 'Face + Neck', one: 135, six: 700 },
+    { area: 'Upper Lip + Underarms', one: 100, six: 600 },
+    { area: 'Chin + Neck', one: 120, six: 600 },
+    { area: 'Upper Lip', one: 45, six: 225 },
+    { area: 'Chin + Upper Lip', one: 120, six: 600 },
+    { area: 'Chin + Underarms', one: 120, six: 600 }
+  ],
+  men: [
+    { area: 'Cheeks', one: 55, six: 275 },
+    { area: 'Beard Line', one: 60, six: 300 },
+    { area: 'Neck', one: 85, six: 500 },
+    { area: 'Chest', one: 165, six: 985 },
+    { area: 'Full Back', one: 165, six: 985 },
+    { area: 'Shoulders', one: 145, six: 800 },
+    { area: 'Chest + Back + Neck + Ears + Cheeks', one: 400, six: 2000 },
+    { area: 'Shoulders + Neck', one: 200, six: 1000 },
+    { area: 'Beard + Neck + Ears', one: 155, six: 930 }
+  ],
+  body: [
+    { area: 'Full Legs', one: 155, six: 900 },
+    { area: 'Full Arms', one: 135, six: 700 },
+    { area: 'Full Arms + Underarms', one: 175, six: 985 },
+    { area: 'Face + Underarms', one: 185, six: 985 },
+    { area: 'Chest', one: 165, six: 985 },
+    { area: 'Full Back', one: 165, six: 985 },
+    { area: 'Chest + Back', one: 300, six: 1500 },
+    { area: 'Shoulders', one: 145, six: 800 },
+    { area: 'Chest + Back + Neck + Cheeks', one: 400, six: 2000 },
+    { area: 'Shoulders + Neck', one: 200, six: 1100 },
+    { area: 'Brazilian', one: 100, six: 555 },
+    { area: 'Bikini Line', one: 55, six: 330 },
+    { area: 'Stomach', one: 85, six: 500 },
+    { area: 'Full Body', one: 445, six: 2670 }
+  ]
+};
+
+function setLaserMode(on){
+  laserMode = on;
+  document.querySelector('.modal').classList.toggle('laser-mode', on);
+  document.getElementById('standardBooking').style.display = on ? 'none' : 'block';
+  document.getElementById('laserBooking').classList.toggle('show', on);
+  document.getElementById('svcHeading').textContent = on ? 'Laser Hair Removal — Select Treatment' : 'Select Services';
+  document.getElementById('err1').textContent = on ? 'Please select at least one treatment area.' : 'Please choose at least one service and a stylist.';
+  if(on){
+    laserSessionCount = 1;
+    laserCategory = 'women';
+    laserSelections = [];
+    document.querySelectorAll('.laser-session-btn').forEach(btn=>{
+      btn.classList.toggle('on', btn.dataset.sessions === '1');
+    });
+    document.querySelectorAll('.laser-cat-tab').forEach(tab=>{
+      tab.classList.toggle('on', tab.dataset.cat === 'women');
+    });
+    renderLaserAreas();
+  }
+}
+
+function renderLaserAreas(){
+  const list = document.getElementById('laserAreas');
+  list.innerHTML = '';
+  (LASER_PRICES[laserCategory] || []).forEach(item=>{
+    const price = laserSessionCount === 6 ? item.six : item.one;
+    const key = `${laserCategory}|${item.area}|${laserSessionCount}`;
+    const selected = laserSelections.some(s => s.key === key);
+    const el = document.createElement('button');
+    el.type = 'button';
+    el.className = 'laser-area-opt' + (selected ? ' on' : '');
+    el.innerHTML = `<span>${item.area}</span><span class="price">$${price}</span>`;
+    el.addEventListener('click', ()=>{
+      const idx = laserSelections.findIndex(s => s.key === key);
+      if(idx >= 0) laserSelections.splice(idx, 1);
+      else laserSelections.push({ key, area: item.area, sessions: laserSessionCount, price, category: laserCategory });
+      renderLaserAreas();
+    });
+    list.appendChild(el);
+  });
+}
+
+document.querySelectorAll('.laser-session-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    laserSessionCount = Number(btn.dataset.sessions);
+    document.querySelectorAll('.laser-session-btn').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    laserSelections = [];
+    renderLaserAreas();
+  });
+});
+document.querySelectorAll('.laser-cat-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    laserCategory = tab.dataset.cat;
+    document.querySelectorAll('.laser-cat-tab').forEach(t=>t.classList.remove('on'));
+    tab.classList.add('on');
+    laserSelections = [];
+    renderLaserAreas();
+  });
+});
 
 function openModal(preset, presetLabel){
   document.getElementById('overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
   resetModal();
   buildDates();
-  if(presetLabel){
+  if(presetLabel === 'Laser Hair Removal'){
+    setLaserMode(true);
+    booking.staff = 'Certified Laser Technician';
+  } else if(presetLabel){
     const note = document.getElementById('presetServiceNote');
     note.style.display = 'block';
     note.textContent = 'Booking: ' + presetLabel;
@@ -1290,6 +1431,8 @@ function closeModal(){
 }
 function resetModal(){
   booking = { services:[], staff:null, date:null, time:null };
+  laserSelections = [];
+  setLaserMode(false);
   document.querySelectorAll('.svc-opt.on, .staff-c.on').forEach(el=>el.classList.remove('on'));
   document.getElementById('presetServiceNote').style.display = 'none';
   goStep(1);
@@ -1322,6 +1465,12 @@ function goStep(n){
 }
 function validateStep1(){
   const err = document.getElementById('err1');
+  if(laserMode){
+    if(laserSelections.length === 0){ err.classList.add('show'); return; }
+    booking.services = laserSelections.map(s => `${s.area} (${s.sessions === 6 ? '6 Sessions' : '1 Session'} — $${s.price})`);
+    err.classList.remove('show'); goStep(2);
+    return;
+  }
   if(booking.services.length === 0 || !booking.staff){ err.classList.add('show'); return; }
   err.classList.remove('show'); goStep(2);
 }
@@ -1380,9 +1529,11 @@ function buildSummary(){
   booking.lastName = ln;
   booking.phone = ph;
   booking.email = em;
+  const serviceLabel = laserMode ? 'Laser Treatments' : 'Services';
+  const staffLabel = laserMode ? 'Technician' : 'Stylist';
   document.getElementById('summaryBox').innerHTML = `
-    <div class="s-row"><span>Services</span><strong>${booking.services.join(', ')}</strong></div>
-    <div class="s-row"><span>Stylist</span><strong>${booking.staff}</strong></div>
+    <div class="s-row"><span>${serviceLabel}</span><strong>${booking.services.join('<br>')}</strong></div>
+    <div class="s-row"><span>${staffLabel}</span><strong>${booking.staff}</strong></div>
     <div class="s-row"><span>Date &amp; Time</span><strong>${booking.date} · ${booking.time}</strong></div>
     <div class="s-row"><span>Name</span><strong>${fn} ${ln}</strong></div>
     <div class="s-row"><span>Phone</span><strong>${ph}</strong></div>
