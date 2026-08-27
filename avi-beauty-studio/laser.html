@@ -660,18 +660,13 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
 .modal.laser-mode{ width:min(760px,100%); }
 .laser-booking{ display:none; }
 .laser-booking.show{ display:block; }
-.laser-price-img{ width:100%; border-radius:14px; margin-bottom:1.2rem; border:1px solid var(--border); box-shadow:0 8px 24px rgba(69,57,105,.08); }
-.laser-price-note{ font-size:.78rem; color:var(--ink-soft); margin:-.4rem 0 1rem; }
-.laser-session-toggle{ display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin-bottom:1rem; }
-.laser-session-btn{ padding:.8rem; border:1px solid var(--border); border-radius:12px; cursor:pointer; text-align:center; font-size:.8rem; background:#fff; transition:.25s; }
-.laser-session-btn.on{ border-color:var(--lav); background:var(--lav-pale); color:var(--lav-deep); font-weight:700; }
+.laser-consult-note{ font-size:.85rem; color:var(--lav-deep); margin-bottom:1.2rem; padding:.9rem 1.1rem; border-radius:14px; background:var(--lav-pale); border:1px solid var(--border); font-weight:600; }
 .laser-cat-tabs{ display:flex; gap:.5rem; margin-bottom:1rem; flex-wrap:wrap; }
 .laser-cat-tab{ padding:.55rem .95rem; border-radius:999px; border:1px solid var(--border); cursor:pointer; font-size:.72rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; background:#fff; transition:.25s; }
 .laser-cat-tab.on{ background:var(--lav); border-color:var(--lav); color:#fff; }
 .laser-areas{ max-height:220px; overflow-y:auto; display:flex; flex-direction:column; gap:.55rem; margin-bottom:1.2rem; padding-right:.2rem; }
 .laser-area-opt{ display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.8rem 1rem; border:1px solid var(--border); border-radius:12px; cursor:pointer; background:#fff; font-size:.82rem; transition:.25s; }
 .laser-area-opt.on{ border-color:var(--lav); background:var(--lav-pale); color:var(--lav-deep); font-weight:600; }
-.laser-area-opt .price{ font-weight:700; color:var(--lav-deep); white-space:nowrap; }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:1100px){
@@ -782,7 +777,7 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
         <div class="laser-perk"><div class="perk-dot"></div>Certified laser technicians</div>
         <div class="laser-perk"><div class="perk-dot"></div>Free consultation session</div>
       </div>
-      <button class="btn btn-primary" style="width:fit-content" onclick="openModal(null,'Laser Hair Removal')">Book Laser Session</button>
+      <button class="btn btn-primary" style="width:fit-content" onclick="openModal(null,'Free Laser Consultation')">Book Free Consultation</button>
     </div>
     <div class="laser-img"><img src="images/laser-treatment.jpg" alt="Alma laser hair removal treatment at Avi's Beauty Studio" loading="lazy"></div>
   </div>
@@ -878,12 +873,7 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
         </div>
 
         <div id="laserBooking" class="laser-booking">
-          <img src="images/laser-price-list.png" alt="Laser hair removal price list at Avi's Beauty Studio" class="laser-price-img" loading="lazy">
-          <p class="laser-price-note">Select your treatment area and session package below. Free consultation available.</p>
-          <div class="laser-session-toggle">
-            <button type="button" class="laser-session-btn on" data-sessions="1">1 Session</button>
-            <button type="button" class="laser-session-btn" data-sessions="6">6 Sessions (Package)</button>
-          </div>
+          <p class="laser-consult-note">Book your free consultation — select the area(s) you're interested in and we'll confirm everything with you.</p>
           <div class="laser-cat-tabs" id="laserCatTabs">
             <button type="button" class="laser-cat-tab on" data-cat="women">Women</button>
             <button type="button" class="laser-cat-tab" data-cat="men">Men</button>
@@ -1306,46 +1296,23 @@ if(document.getElementById('contactSubmit')){
 /* ============ BOOKING MODAL ============ */
 let booking = { services:[], staff:null, date:null, time:null };
 let laserMode = false;
-let laserSessionCount = 1;
 let laserCategory = 'women';
 let laserSelections = [];
 
-const LASER_PRICES = {
+const LASER_AREAS = {
   women: [
-    { area: 'Full Face', one: 120, six: 675 },
-    { area: 'Face + Neck', one: 135, six: 700 },
-    { area: 'Upper Lip + Underarms', one: 100, six: 600 },
-    { area: 'Chin + Neck', one: 120, six: 600 },
-    { area: 'Upper Lip', one: 45, six: 225 },
-    { area: 'Chin + Upper Lip', one: 120, six: 600 },
-    { area: 'Chin + Underarms', one: 120, six: 600 }
+    'Full Face', 'Face + Neck', 'Upper Lip + Underarms', 'Chin + Neck',
+    'Upper Lip', 'Chin + Upper Lip', 'Chin + Underarms'
   ],
   men: [
-    { area: 'Cheeks', one: 55, six: 275 },
-    { area: 'Beard Line', one: 60, six: 300 },
-    { area: 'Neck', one: 85, six: 500 },
-    { area: 'Chest', one: 165, six: 985 },
-    { area: 'Full Back', one: 165, six: 985 },
-    { area: 'Shoulders', one: 145, six: 800 },
-    { area: 'Chest + Back + Neck + Ears + Cheeks', one: 400, six: 2000 },
-    { area: 'Shoulders + Neck', one: 200, six: 1000 },
-    { area: 'Beard + Neck + Ears', one: 155, six: 930 }
+    'Cheeks', 'Beard Line', 'Neck', 'Chest', 'Full Back', 'Shoulders',
+    'Chest + Back + Neck + Ears + Cheeks', 'Shoulders + Neck', 'Beard + Neck + Ears'
   ],
   body: [
-    { area: 'Full Legs', one: 155, six: 900 },
-    { area: 'Full Arms', one: 135, six: 700 },
-    { area: 'Full Arms + Underarms', one: 175, six: 985 },
-    { area: 'Face + Underarms', one: 185, six: 985 },
-    { area: 'Chest', one: 165, six: 985 },
-    { area: 'Full Back', one: 165, six: 985 },
-    { area: 'Chest + Back', one: 300, six: 1500 },
-    { area: 'Shoulders', one: 145, six: 800 },
-    { area: 'Chest + Back + Neck + Cheeks', one: 400, six: 2000 },
-    { area: 'Shoulders + Neck', one: 200, six: 1100 },
-    { area: 'Brazilian', one: 100, six: 555 },
-    { area: 'Bikini Line', one: 55, six: 330 },
-    { area: 'Stomach', one: 85, six: 500 },
-    { area: 'Full Body', one: 445, six: 2670 }
+    'Full Legs', 'Full Arms', 'Full Arms + Underarms', 'Face + Underarms',
+    'Chest', 'Full Back', 'Chest + Back', 'Shoulders',
+    'Chest + Back + Neck + Cheeks', 'Shoulders + Neck', 'Brazilian',
+    'Bikini Line', 'Stomach', 'Full Body'
   ]
 };
 
@@ -1354,15 +1321,11 @@ function setLaserMode(on){
   document.querySelector('.modal').classList.toggle('laser-mode', on);
   document.getElementById('standardBooking').style.display = on ? 'none' : 'block';
   document.getElementById('laserBooking').classList.toggle('show', on);
-  document.getElementById('svcHeading').textContent = on ? 'Laser Hair Removal — Select Treatment' : 'Select Services';
+  document.getElementById('svcHeading').textContent = on ? 'Book Your Free Consultation' : 'Select Services';
   document.getElementById('err1').textContent = on ? 'Please select at least one treatment area.' : 'Please choose at least one service and a stylist.';
   if(on){
-    laserSessionCount = 1;
     laserCategory = 'women';
     laserSelections = [];
-    document.querySelectorAll('.laser-session-btn').forEach(btn=>{
-      btn.classList.toggle('on', btn.dataset.sessions === '1');
-    });
     document.querySelectorAll('.laser-cat-tab').forEach(tab=>{
       tab.classList.toggle('on', tab.dataset.cat === 'women');
     });
@@ -1373,39 +1336,28 @@ function setLaserMode(on){
 function renderLaserAreas(){
   const list = document.getElementById('laserAreas');
   list.innerHTML = '';
-  (LASER_PRICES[laserCategory] || []).forEach(item=>{
-    const price = laserSessionCount === 6 ? item.six : item.one;
-    const key = `${laserCategory}|${item.area}|${laserSessionCount}`;
+  (LASER_AREAS[laserCategory] || []).forEach(area=>{
+    const key = `${laserCategory}|${area}`;
     const selected = laserSelections.some(s => s.key === key);
     const el = document.createElement('button');
     el.type = 'button';
     el.className = 'laser-area-opt' + (selected ? ' on' : '');
-    el.innerHTML = `<span>${item.area}</span><span class="price">$${price}</span>`;
+    el.textContent = area;
     el.addEventListener('click', ()=>{
       const idx = laserSelections.findIndex(s => s.key === key);
       if(idx >= 0) laserSelections.splice(idx, 1);
-      else laserSelections.push({ key, area: item.area, sessions: laserSessionCount, price, category: laserCategory });
+      else laserSelections.push({ key, area, category: laserCategory });
       renderLaserAreas();
     });
     list.appendChild(el);
   });
 }
 
-document.querySelectorAll('.laser-session-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    laserSessionCount = Number(btn.dataset.sessions);
-    document.querySelectorAll('.laser-session-btn').forEach(b=>b.classList.remove('on'));
-    btn.classList.add('on');
-    laserSelections = [];
-    renderLaserAreas();
-  });
-});
 document.querySelectorAll('.laser-cat-tab').forEach(tab=>{
   tab.addEventListener('click', ()=>{
     laserCategory = tab.dataset.cat;
     document.querySelectorAll('.laser-cat-tab').forEach(t=>t.classList.remove('on'));
     tab.classList.add('on');
-    laserSelections = [];
     renderLaserAreas();
   });
 });
@@ -1415,7 +1367,7 @@ function openModal(preset, presetLabel){
   document.body.style.overflow = 'hidden';
   resetModal();
   buildDates();
-  if(presetLabel === 'Laser Hair Removal'){
+  if(presetLabel === 'Free Laser Consultation' || presetLabel === 'Laser Hair Removal'){
     setLaserMode(true);
     booking.staff = 'Certified Laser Technician';
   } else if(presetLabel){
@@ -1467,7 +1419,7 @@ function validateStep1(){
   const err = document.getElementById('err1');
   if(laserMode){
     if(laserSelections.length === 0){ err.classList.add('show'); return; }
-    booking.services = laserSelections.map(s => `${s.area} (${s.sessions === 6 ? '6 Sessions' : '1 Session'} — $${s.price})`);
+    booking.services = laserSelections.map(s => s.area);
     err.classList.remove('show'); goStep(2);
     return;
   }
@@ -1529,11 +1481,12 @@ function buildSummary(){
   booking.lastName = ln;
   booking.phone = ph;
   booking.email = em;
-  const serviceLabel = laserMode ? 'Laser Treatments' : 'Services';
+  const serviceLabel = laserMode ? 'Areas of Interest' : 'Services';
   const staffLabel = laserMode ? 'Technician' : 'Stylist';
   document.getElementById('summaryBox').innerHTML = `
+    ${laserMode ? '<div class="s-row"><span>Appointment</span><strong>Free Laser Consultation</strong></div>' : ''}
     <div class="s-row"><span>${serviceLabel}</span><strong>${booking.services.join('<br>')}</strong></div>
-    <div class="s-row"><span>${staffLabel}</span><strong>${booking.staff}</strong></div>
+    ${laserMode ? '' : `<div class="s-row"><span>${staffLabel}</span><strong>${booking.staff}</strong></div>`}
     <div class="s-row"><span>Date &amp; Time</span><strong>${booking.date} · ${booking.time}</strong></div>
     <div class="s-row"><span>Name</span><strong>${fn} ${ln}</strong></div>
     <div class="s-row"><span>Phone</span><strong>${ph}</strong></div>
@@ -1543,13 +1496,21 @@ function buildSummary(){
 function confirmBooking(){
   // Build the WhatsApp message and open it immediately (still inside the click handler / user gesture)
   const b = booking;
-  const waText = `New appointment request from the website:\n\n`
-    + `Services: ${b.services.join(', ')}\n`
-    + `Stylist: ${b.staff}\n`
-    + `Date & Time: ${b.date} · ${b.time}\n`
-    + `Name: ${b.firstName} ${b.lastName}\n`
-    + `Phone: ${b.phone}`
-    + (b.email ? `\nEmail: ${b.email}` : '');
+  const waText = laserMode
+    ? `New free consultation request from the website:\n\n`
+      + `Appointment: Free Laser Consultation\n`
+      + `Areas of Interest: ${b.services.join(', ')}\n`
+      + `Date & Time: ${b.date} · ${b.time}\n`
+      + `Name: ${b.firstName} ${b.lastName}\n`
+      + `Phone: ${b.phone}`
+      + (b.email ? `\nEmail: ${b.email}` : '')
+    : `New appointment request from the website:\n\n`
+      + `Services: ${b.services.join(', ')}\n`
+      + `Stylist: ${b.staff}\n`
+      + `Date & Time: ${b.date} · ${b.time}\n`
+      + `Name: ${b.firstName} ${b.lastName}\n`
+      + `Phone: ${b.phone}`
+      + (b.email ? `\nEmail: ${b.email}` : '');
   const waUrl = 'https://wa.me/16477176747?text=' + encodeURIComponent(waText);
   window.open(waUrl, '_blank');
 
