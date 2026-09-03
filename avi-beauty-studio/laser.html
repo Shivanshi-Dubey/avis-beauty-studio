@@ -317,16 +317,87 @@ nav.scrolled{ height:66px; background:rgba(251,247,241,.95); }
 .old-price{ text-decoration:line-through; color:rgba(255,255,255,.4); font-size:.9rem; }
 .deal-card .btn{ width:100%; }
 
-/* ================= LASER ================= */
-.laser-sec{ padding:0; background:var(--cream-deep); }
-.laser-inner{ display:grid; grid-template-columns:1fr 1fr; min-height:560px; }
-.laser-text{ padding:6.5rem 5vw; display:flex; flex-direction:column; justify-content:center; }
-.laser-perks{ margin:2rem 0; display:flex; flex-direction:column; gap:.9rem; }
-.laser-perk{ display:flex; align-items:center; gap:.9rem; font-size:.85rem; color:var(--ink-soft); }
-.perk-dot{ width:6px; height:6px; border-radius:50%; background:var(--lav); flex-shrink:0; }
-.laser-img{ position:relative; overflow:hidden; }
-.laser-img img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-.laser-img::after{ content:''; position:absolute; inset:0; background:linear-gradient(120deg,rgba(69,57,105,.35),transparent 55%); }
+/* ================= LASER LANDING ================= */
+.laser-hero{
+  position:relative; min-height:92vh; min-height:92dvh;
+  display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:2rem;
+  padding:150px 5vw 5rem; background:linear-gradient(155deg,var(--cream) 0%,var(--lav-pale) 55%,var(--lav-light) 100%);
+  overflow:hidden;
+}
+.laser-hero-copy{ position:relative; z-index:2; }
+.laser-hero-copy h1{
+  font-family:'Fraunces',serif; font-weight:400; font-size:clamp(2.6rem,5vw,4.4rem); line-height:1.05;
+  color:var(--ink); margin:1.2rem 0 1.3rem; letter-spacing:-.01em;
+}
+.laser-hero-copy h1 em{
+  font-style:italic; font-weight:400;
+  background:linear-gradient(100deg,var(--lav) 10%,var(--gold) 50%,var(--lav) 90%);
+  background-size:200% auto; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+}
+.laser-hero-sub{ font-size:1rem; line-height:1.85; color:var(--ink-soft); max-width:480px; margin-bottom:2rem; }
+.laser-hero-note{ font-size:.78rem; color:var(--ink-faint); margin-top:1rem; letter-spacing:.04em; }
+.laser-hero-btns{ display:flex; gap:.85rem; flex-wrap:wrap; align-items:center; }
+.laser-hero-visual{ position:relative; z-index:2; height:min(580px,72vh); border-radius:32px; overflow:hidden; box-shadow:var(--shadow-lift); }
+.laser-hero-visual img{ width:100%; height:100%; object-fit:cover; }
+.laser-hero-visual::after{ content:''; position:absolute; inset:0; background:linear-gradient(200deg,rgba(69,57,105,.08),rgba(69,57,105,.28)); }
+.laser-hero-badge{
+  position:absolute; left:1.2rem; bottom:1.2rem; z-index:2; background:rgba(255,255,255,.92);
+  border:1px solid var(--border); border-radius:16px; padding:.85rem 1.1rem; max-width:220px;
+  font-size:.72rem; color:var(--lav-deep); font-weight:700; box-shadow:var(--shadow-soft);
+}
+.laser-trust{
+  background:var(--lav-deep); color:#fff; padding:1.4rem 5vw; border-top:1px solid rgba(255,255,255,.08);
+}
+.laser-trust-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; max-width:1100px; margin:0 auto; }
+.laser-trust-item{ text-align:center; padding:.5rem; }
+.laser-trust-item strong{ display:block; font-family:'Fraunces',serif; font-size:1.15rem; font-weight:500; color:var(--gold-light); margin-bottom:.25rem; }
+.laser-trust-item span{ font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.65); }
+.laser-exp-inner{ display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.laser-exp-img{ border-radius:28px; overflow:hidden; box-shadow:var(--shadow-lift); aspect-ratio:4/5; }
+.laser-exp-img img{ width:100%; height:100%; object-fit:cover; }
+.laser-exp-list{ margin:1.8rem 0 2rem; display:flex; flex-direction:column; gap:.85rem; }
+.laser-exp-list li{ display:flex; align-items:flex-start; gap:.75rem; font-size:.88rem; color:var(--ink-soft); line-height:1.7; list-style:none; }
+.laser-exp-list li::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--gold); margin-top:.55rem; flex-shrink:0; }
+.laser-goodbye-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:2.5rem; }
+.laser-goodbye-card{
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:18px;
+  padding:1.4rem 1.5rem; font-size:.88rem; line-height:1.7; color:rgba(255,255,255,.82);
+}
+.laser-goodbye-card strong{ display:block; color:#fff; margin-bottom:.35rem; font-size:.95rem; }
+.laser-area-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.1rem; margin-top:2.5rem; }
+.laser-area-card{
+  background:var(--cream-card); border:1px solid var(--border); border-radius:20px; padding:1.6rem 1.4rem;
+  transition:.35s ease;
+}
+.laser-area-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-lift); border-color:var(--lav-mid); }
+.laser-area-num{ font-family:'Fraunces',serif; font-style:italic; font-size:1.6rem; color:var(--lav-light); line-height:1; margin-bottom:.5rem; }
+.laser-area-card h3{ font-family:'Fraunces',serif; font-size:1.15rem; font-weight:500; margin-bottom:.5rem; color:var(--ink); }
+.laser-area-card p{ font-size:.82rem; color:var(--ink-soft); line-height:1.65; }
+.laser-steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.3rem; margin-top:2.5rem; }
+.laser-step{
+  background:var(--cream-card); border:1px solid var(--border); border-radius:22px; padding:2rem 1.8rem;
+  position:relative;
+}
+.laser-step-num{
+  width:36px; height:36px; border-radius:50%; background:var(--lav-pale); color:var(--lav-deep);
+  display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.82rem; margin-bottom:1rem;
+}
+.laser-step h3{ font-family:'Fraunces',serif; font-size:1.2rem; font-weight:500; margin-bottom:.65rem; }
+.laser-step p{ font-size:.85rem; color:var(--ink-soft); line-height:1.75; }
+.laser-faq{ max-width:760px; margin:2.5rem auto 0; }
+.laser-faq-item{ border-bottom:1px solid var(--border); }
+.laser-faq-q{
+  width:100%; background:none; border:none; text-align:left; padding:1.2rem 0; cursor:pointer;
+  font-family:'Manrope',sans-serif; font-size:.92rem; font-weight:700; color:var(--ink);
+  display:flex; justify-content:space-between; align-items:center; gap:1rem;
+}
+.laser-faq-q span{ font-size:1.3rem; color:var(--lav); transition:transform .25s; flex-shrink:0; }
+.laser-faq-item.open .laser-faq-q span{ transform:rotate(45deg); }
+.laser-faq-a{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
+.laser-faq-item.open .laser-faq-a{ max-height:320px; }
+.laser-faq-a p{ padding:0 0 1.2rem; font-size:.86rem; color:var(--ink-soft); line-height:1.75; }
+.laser-final-cta .cta-inner{ text-align:center; justify-content:center; flex-direction:column; }
+.laser-final-cta .cta-actions{ justify-content:center; }
 
 /* ================= PILLARS ================= */
 .pillars-sec{ text-align:center; }
@@ -681,8 +752,11 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
   .hero{ grid-template-columns:1fr; padding-top:170px; }
   .hero-visual{ height:380px; order:-1; }
   .hero-card, .hero-tag-float{ display:none; }
-  .about-inner, .contact-inner, .laser-inner{ grid-template-columns:1fr; }
-  .laser-img{ min-height:340px; }
+  .about-inner, .contact-inner, .laser-hero, .laser-exp-inner{ grid-template-columns:1fr; }
+  .laser-hero-visual{ height:340px; order:-1; }
+  .laser-trust-grid{ grid-template-columns:repeat(2,1fr); }
+  .laser-area-grid{ grid-template-columns:repeat(2,1fr); }
+  .laser-steps{ grid-template-columns:1fr; }
 }
 @media(max-width:768px){
   nav{ padding:0 1.4rem; grid-template-columns:auto auto; }
@@ -696,6 +770,7 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
   .svc-grid, .deals-grid, .pillars-grid, .insta-grid{ grid-template-columns:1fr; }
   .footer-grid{ grid-template-columns:1fr; gap:2.4rem; }
   .svc-pick, .staff-grid{ grid-template-columns:1fr; }
+  .laser-goodbye-grid, .laser-trust-grid, .laser-area-grid{ grid-template-columns:1fr; }
   .time-grid{ grid-template-columns:1fr 1fr; }
   .f-row{ grid-template-columns:1fr; }
   .gallery-stage{ height:400px; }
@@ -727,10 +802,10 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
 
 <div class="ticker">
   <div class="ticker-track">
-    <span>✦ Premium Unisex Salon</span><span>✦ Belle River, Ontario</span><span>✦ Hair · Skin · Nails · Makeup</span>
-    <span>✦ Laser Treatments</span><span>✦ Bridal Beauty Specialists</span><span>✦ Book Your Appointment Today</span>
-    <span>✦ Premium Unisex Salon</span><span>✦ Belle River, Ontario</span><span>✦ Hair · Skin · Nails · Makeup</span>
-    <span>✦ Laser Treatments</span><span>✦ Bridal Beauty Specialists</span><span>✦ Book Your Appointment Today</span>
+    <span>✦ Free Laser Consultation</span><span>✦ FDA-Approved Technology</span><span>✦ All Skin Tones Welcome</span>
+    <span>✦ Belle River, Ontario</span><span>✦ Certified Laser Technicians</span><span>✦ Book Your Consultation Today</span>
+    <span>✦ Free Laser Consultation</span><span>✦ FDA-Approved Technology</span><span>✦ All Skin Tones Welcome</span>
+    <span>✦ Belle River, Ontario</span><span>✦ Certified Laser Technicians</span><span>✦ Book Your Consultation Today</span>
   </div>
 </div>
 
@@ -756,39 +831,194 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
     <a href="https://www.instagram.com/avisbeautystudio/" class="nav-social" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
     </a>
-    <button type="button" class="btn btn-primary" onclick="openModal()">Book Now</button>
+    <button type="button" class="btn btn-primary" onclick="openModal(null,'Free Laser Consultation')">Book Free Consultation</button>
   </div>
   <button class="hamburger" id="ham" onclick="toggleNav()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- ================= LASER ================= -->
-<section id="laser" class="laser-sec">
-  <div class="laser-inner">
-    <div class="laser-text">
-      <span class="eyebrow">Advanced Technology</span>
-      <h2 class="title">Laser Hair<br><em>Removal</em></h2>
-      <p class="lede">Safe, effective and long-lasting results with our certified laser equipment — suitable for all skin types.</p>
-      <div class="laser-perks">
-        <div class="laser-perk"><div class="perk-dot"></div>FDA-approved laser equipment</div>
-        <div class="laser-perk"><div class="perk-dot"></div>Suitable for all skin tones</div>
-        <div class="laser-perk"><div class="perk-dot"></div>Minimal discomfort, maximum results</div>
-        <div class="laser-perk"><div class="perk-dot"></div>Certified laser technicians</div>
-        <div class="laser-perk"><div class="perk-dot"></div>Free consultation session</div>
-      </div>
-      <button class="btn btn-primary" style="width:fit-content" onclick="openModal(null,'Free Laser Consultation')">Book Free Consultation</button>
+<!-- ================= LASER LANDING ================= -->
+<section class="laser-hero" id="laser">
+  <div class="laser-hero-copy" data-reveal>
+    <span class="eyebrow">Laser Hair Removal · Belle River</span>
+    <h1>Your smooth<br><em>era</em><br>starts here.</h1>
+    <p class="laser-hero-sub">No more razor burn. No more ingrown hairs. Just smooth, confident skin — with a complimentary consultation to build your personalized treatment plan.</p>
+    <div class="laser-hero-btns">
+      <button class="btn btn-primary" onclick="openModal(null,'Free Laser Consultation')">Book Free Consultation</button>
+      <a href="tel:+16477176747" class="btn btn-ghost">Call Us</a>
     </div>
-    <div class="laser-img"><img src="images/laser-treatment.jpg" alt="Alma laser hair removal treatment at Avi's Beauty Studio" loading="lazy"></div>
+    <p class="laser-hero-note">Complimentary · No commitment · Personalized plan</p>
+  </div>
+  <div class="laser-hero-visual" data-reveal>
+    <img src="images/laser-treatment.jpg" alt="Laser hair removal treatment at Avi's Beauty Studio" loading="eager">
+    <div class="laser-hero-badge">FDA-approved laser · Safe for all skin tones</div>
+  </div>
+</section>
+
+<section class="laser-trust" aria-label="Why trust us">
+  <div class="laser-trust-grid">
+    <div class="laser-trust-item"><strong>FDA-Approved</strong><span>Laser Technology</span></div>
+    <div class="laser-trust-item"><strong>All Skin Tones</strong><span>Safe &amp; Effective</span></div>
+    <div class="laser-trust-item"><strong>Free Consult</strong><span>No Obligation</span></div>
+    <div class="laser-trust-item"><strong>Certified Team</strong><span>Expert Care</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="laser-exp-inner">
+    <div class="laser-exp-img" data-reveal><img src="images/laser-treatment.jpg" alt="Laser treatment experience at Avi's Beauty Studio" loading="lazy"></div>
+    <div data-reveal>
+      <span class="eyebrow">The Experience</span>
+      <h2 class="title">The boutique laser<br><em>experience.</em></h2>
+      <p class="lede">This isn't a rushed appointment. It's a calm, personalized experience designed to make you feel as good as your results look — from your very first visit.</p>
+      <ul class="laser-exp-list">
+        <li>A warm welcome from the moment you walk in</li>
+        <li>Your technician builds a plan just for you</li>
+        <li>Complimentary consultation — no pressure</li>
+        <li>Long-lasting smooth skin you'll love</li>
+      </ul>
+      <button class="btn btn-primary" onclick="openModal(null,'Free Laser Consultation')">Book Free Consultation</button>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="section-inner">
+    <span class="eyebrow" style="color:var(--gold-light)">Finally. A Lasting Solution.</span>
+    <h2 class="title">Say goodbye to everything<br>that isn't <em>working.</em></h2>
+    <div class="laser-goodbye-grid">
+      <div class="laser-goodbye-card"><strong>Razor burn &amp; ingrown hairs</strong>Gone. No more redness, irritation, or the endless grow-back cycle.</div>
+      <div class="laser-goodbye-card"><strong>The daily maintenance</strong>Gone. Spontaneous plans. Beach days without a second thought.</div>
+      <div class="laser-goodbye-card"><strong>Waxing appointments</strong>Gone. No more scheduling your life around hair removal.</div>
+      <div class="laser-goodbye-card"><strong>A lifetime of waxing costs</strong>Gone. Invest once in lasting results — we'll walk you through every option at your free consult.</div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <button class="btn btn-gold" onclick="openModal(null,'Free Laser Consultation')">Book Free Consultation</button>
+    </div>
+  </div>
+</section>
+
+<section class="section pillars-sec">
+  <div class="pillars-head" data-reveal>
+    <span class="eyebrow" style="justify-content:center">The Avi's Difference</span>
+    <h2 class="title">Why guests choose <em>us.</em></h2>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar-card" data-reveal>
+      <div class="pillar-num">01</div>
+      <h3>Expert Care</h3>
+      <p>Every laser treatment is performed by certified technicians who tailor settings to your skin type, hair texture, and goals.</p>
+    </div>
+    <div class="pillar-card" data-reveal>
+      <div class="pillar-num">02</div>
+      <h3>Advanced Technology</h3>
+      <p>We use FDA-approved laser equipment designed for safe, precise treatment across all skin tones — comfort and results you can trust.</p>
+    </div>
+    <div class="pillar-card" data-reveal>
+      <div class="pillar-num">03</div>
+      <h3>A Boutique Experience</h3>
+      <p>You're treated like family from the moment you walk in. Warm welcome, personalized care, and a space that feels curated — not clinical.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner" data-reveal>
+    <span class="eyebrow">Laser Hair Removal</span>
+    <h2 class="title">Areas we <em>treat.</em></h2>
+    <p class="lede">From upper lip to full body — we've got you (un)covered. Your free consultation is the best place to explore what works for you.</p>
+    <div class="laser-area-grid">
+      <div class="laser-area-card"><div class="laser-area-num">01</div><h3>Face</h3><p>Upper lip, chin, jawline, cheeks — gentle and precise.</p></div>
+      <div class="laser-area-card"><div class="laser-area-num">02</div><h3>Underarms</h3><p>Fast, effective, and life-changing for your daily routine.</p></div>
+      <div class="laser-area-card"><div class="laser-area-num">03</div><h3>Bikini &amp; Brazilian</h3><p>Our most requested area. Smooth, confident skin all year.</p></div>
+      <div class="laser-area-card"><div class="laser-area-num">04</div><h3>Full Body</h3><p>Legs, arms, back, abdomen — custom plans built for you.</p></div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <button class="btn btn-primary" onclick="openModal(null,'Free Laser Consultation')">Book Free Consultation</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-deep)">
+  <div class="section-inner" data-reveal>
+    <span class="eyebrow">Simple. Seamless. Lasting.</span>
+    <h2 class="title">How it <em>works.</em></h2>
+    <div class="laser-steps">
+      <div class="laser-step">
+        <div class="laser-step-num">01</div>
+        <h3>Book Your Free Consultation</h3>
+        <p>Completely complimentary — no commitment, no pressure. We'll walk you through everything and build a treatment plan around your goals.</p>
+      </div>
+      <div class="laser-step">
+        <div class="laser-step-num">02</div>
+        <h3>Your Treatment Plan</h3>
+        <p>Every guest is different. We tailor your plan by area, skin type, and hair texture — then walk you through your options during your visit.</p>
+      </div>
+      <div class="laser-step">
+        <div class="laser-step-num">03</div>
+        <h3>Enjoy Your Smooth Skin</h3>
+        <p>Complete your sessions and you're done. No more shaving. No more waxing. No more ingrown hairs. Just smooth, confident skin.</p>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <button class="btn btn-primary" onclick="openModal(null,'Free Laser Consultation')">Book Free Consultation</button>
+    </div>
+  </div>
+</section>
+
+<section class="section testi-sec" id="testimonials">
+  <div class="testi-head"><span class="eyebrow" style="justify-content:center;color:var(--gold-light)">Client Love</span><h2 class="title">What They <em>Say</em></h2></div>
+  <div class="testi-slider">
+    <button type="button" class="testi-arrow prev" id="tPrev" aria-label="Previous review"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+    <div class="testi-viewport"><div class="testi-track" id="tTrack">
+      <div class="testi-slide"><div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">Awesome service, it was such a great experience, felt like you are taken care of as a baby… extremely knowledgeable and experienced staff helping you with what's being done and what makes sense as per your skin, hair and your style… no rush session and make sure you are served with all your needs and fully satisfied.</p><div class="testi-name">Shyam Bansal</div><div class="testi-loc">Ontario, Canada</div></div></div>
+      <div class="testi-slide"><div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">I had an amazing experience at Avi's Beauty Salon. I recently done my hair color and highlights and i am in love with my new look. I have got tons of compliments already. Staff is super friendly and nice. I strongly recommend to everyone.</p><div class="testi-name">Kirandeep Kaur</div><div class="testi-loc">Ontario, Canada</div></div></div>
+      <div class="testi-slide"><div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">Amazing place! Raman is excellent to deal with and she takes great care of you. I come here regularly and love the service provided.</p><div class="testi-name">Sannia Zeshan</div><div class="testi-loc">Ontario, Canada</div></div></div>
+    </div></div>
+    <button type="button" class="testi-arrow next" id="tNext" aria-label="Next review"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></button>
+  </div>
+  <div class="testi-dots" id="tDots"></div>
+</section>
+
+<section class="section">
+  <div class="section-inner" data-reveal>
+    <span class="eyebrow" style="justify-content:center;display:flex">Common Questions</span>
+    <h2 class="title" style="text-align:center">Everything you want to <em>know.</em></h2>
+    <div class="laser-faq">
+      <div class="laser-faq-item">
+        <button type="button" class="laser-faq-q" aria-expanded="false">Does laser hair removal hurt?<span>+</span></button>
+        <div class="laser-faq-a"><p>Most guests describe it as a mild snap with cooling — far more comfortable than waxing. Our FDA-approved equipment includes built-in cooling, and our technicians are expert at making every treatment as comfortable as possible.</p></div>
+      </div>
+      <div class="laser-faq-item">
+        <button type="button" class="laser-faq-q" aria-expanded="false">How much does it cost?<span>+</span></button>
+        <div class="laser-faq-a"><p>Your investment depends on the areas you'd like treated — and your consultation is completely free, so there's no commitment before you know exactly what's involved. We'll walk you through every option during your visit — no surprises, no pressure.</p></div>
+      </div>
+      <div class="laser-faq-item">
+        <button type="button" class="laser-faq-q" aria-expanded="false">How many sessions will I need?<span>+</span></button>
+        <div class="laser-faq-a"><p>Most guests achieve lasting results over the course of multiple sessions. Every plan is tailored to your skin type, hair texture, and treatment areas — we'll map it all out at your complimentary consultation.</p></div>
+      </div>
+      <div class="laser-faq-item">
+        <button type="button" class="laser-faq-q" aria-expanded="false">Is it safe for all skin types?<span>+</span></button>
+        <div class="laser-faq-a"><p>Yes. Our FDA-approved laser technology is designed to safely and effectively treat a wide range of skin tones. Your technician performs a full assessment during your complimentary consultation to confirm candidacy and customize your settings.</p></div>
+      </div>
+      <div class="laser-faq-item">
+        <button type="button" class="laser-faq-q" aria-expanded="false">What makes Avi's different?<span>+</span></button>
+        <div class="laser-faq-a"><p>We're not a chain — we're a boutique salon in Belle River where you're treated like family. Certified technicians, advanced equipment, and a calm, curated space. We build relationships, not just appointments.</p></div>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <button class="btn btn-primary" onclick="openModal(null,'Free Laser Consultation')">Book Free Consultation</button>
+    </div>
   </div>
 </section>
 
 <!-- ================= CTA BANNER ================= -->
-<section class="cta-banner" data-reveal>
+<section class="cta-banner laser-final-cta" data-reveal>
   <div class="cta-inner">
-    <div><span class="eyebrow" style="color:var(--gold-light)">Ready to Glow?</span><h2 class="title">Your <em>Transformation</em> Awaits</h2><p class="lede">Book online or call us — our team is ready to create your perfect look.</p></div>
+    <div><span class="eyebrow" style="color:var(--gold-light)">Your Smooth Era Starts Here</span><h2 class="title">Book your<br>free consult <em>today.</em></h2><p class="lede">Complimentary consultation · Personalized plan · No obligation required.</p></div>
     <div class="cta-actions">
-      <button class="btn btn-gold" onclick="openModal()">Book Appointment</button>
+      <button class="btn btn-gold" onclick="openModal(null,'Free Laser Consultation')">Book Free Consultation</button>
       <a href="tel:+16477176747" class="btn btn-ghost-dark">+1 647-717-6747</a>
     </div>
   </div>
@@ -1258,6 +1488,16 @@ function toggleCategory(h3){
   document.getElementById('tPrev').addEventListener('click', ()=>show(idx-1));
   setInterval(()=>show(idx+1), 7000);
 })();
+
+/* ============ LASER FAQ ============ */
+document.querySelectorAll('.laser-faq-q').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const item = btn.closest('.laser-faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.laser-faq-item').forEach(i=>{ i.classList.remove('open'); i.querySelector('.laser-faq-q').setAttribute('aria-expanded','false'); });
+    if(!open){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
+});
 
 /* ============ NEWSLETTER ============ */
 if(document.getElementById('newsletterForm')){
