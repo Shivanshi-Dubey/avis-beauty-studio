@@ -411,7 +411,9 @@ nav.scrolled{ height:66px; background:rgba(251,247,241,.95); }
 }
 .gal-item.hide{ display:none; }
 .gal-item img{ width:100%; display:block; transition:transform .7s ease; }
-.gal-item:hover img{ transform:scale(1.06); }
+.gal-item video{ width:100%; display:block; transition:transform .7s ease; aspect-ratio:3/4; object-fit:cover; background:#000; }
+.gal-item:hover img,
+.gal-item:hover video{ transform:scale(1.06); }
 .gal-item:hover{ box-shadow:var(--shadow-lift); }
 .gal-item::after{ content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(43,36,66,.82) 0%,rgba(43,36,66,.05) 48%,transparent 70%); opacity:0; transition:opacity .4s ease; }
 .gal-item:hover::after{ opacity:1; }
@@ -423,14 +425,25 @@ nav.scrolled{ height:66px; background:rgba(251,247,241,.95); }
   border:1px solid rgba(255,255,255,.3); backdrop-filter:blur(6px); color:#fff; display:flex; align-items:center; justify-content:center;
   opacity:0; transform:scale(.7); transition:.35s ease; }
 .gal-item:hover .gal-zoom{ opacity:1; transform:scale(1); }
+.gal-play{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2;
+  width:46px; height:46px; border-radius:50%; background:rgba(255,255,255,.18); backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.35); color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:.75rem; pointer-events:none;
+}
+.gal-item-video::after{ opacity:.45; }
+.gal-item-video:hover::after{ opacity:1; }
 
 /* lightbox */
 .lightbox{ position:fixed; inset:0; z-index:9998; background:rgba(24,19,36,.94); backdrop-filter:blur(6px);
   display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:.4s ease; padding:3vh 3vw; }
 .lightbox.open{ opacity:1; visibility:visible; }
 .lb-stage{ position:relative; max-width:1000px; width:100%; max-height:88vh; }
-.lb-stage img{ width:100%; max-height:78vh; object-fit:contain; border-radius:14px; box-shadow:0 30px 80px rgba(0,0,0,.5);
+.lb-stage img,
+.lb-stage video{ width:100%; max-height:78vh; object-fit:contain; border-radius:14px; box-shadow:0 30px 80px rgba(0,0,0,.5);
   animation:lbIn .4s cubic-bezier(.22,1,.36,1) both; }
+.lb-stage img.hidden,
+.lb-stage video.hidden{ display:none; }
 @keyframes lbIn{ from{ opacity:0; transform:scale(.94);} to{ opacity:1; transform:scale(1);} }
 .lb-cap{ text-align:center; color:#fff; margin-top:1.1rem; }
 .lb-cap small{ display:block; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-light); margin-bottom:.35rem; }
@@ -763,6 +776,7 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
       <button class="gal-f-btn" data-filter="makeup">Makeup</button>
       <button class="gal-f-btn" data-filter="skin">Skin</button>
       <button class="gal-f-btn" data-filter="waxing">Waxing</button>
+      <button class="gal-f-btn" data-filter="laser">Laser</button>
     </div>
   </div>
 
@@ -803,6 +817,22 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
       <img src="https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=700&h=980&fit=crop&q=80" alt="Threading service">
       <span class="gal-zoom">⤢</span><div class="gal-cap"><small>Threading</small><strong>Precision Brow Shaping</strong></div>
     </div>
+    <div class="gal-item gal-item-video" data-cat="laser" data-tag="Laser Hair Removal" data-title="Precision Treatment" data-video="images/laser.mp4">
+      <video src="images/laser.mp4" poster="images/laser-treatment.jpg" muted loop playsinline preload="metadata"></video>
+      <span class="gal-play">▶</span><span class="gal-zoom">⤢</span><div class="gal-cap"><small>Laser Hair Removal</small><strong>Precision Treatment</strong></div>
+    </div>
+    <div class="gal-item gal-item-video" data-cat="laser" data-tag="Laser Hair Removal" data-title="Comfortable &amp; Calm" data-video="images/laser2.mp4">
+      <video src="images/laser2.mp4" poster="images/laser-treatment.jpg" muted loop playsinline preload="metadata"></video>
+      <span class="gal-play">▶</span><span class="gal-zoom">⤢</span><div class="gal-cap"><small>Laser Hair Removal</small><strong>Comfortable &amp; Calm</strong></div>
+    </div>
+    <div class="gal-item gal-item-video" data-cat="laser" data-tag="Laser Hair Removal" data-title="Expert Technique" data-video="images/laser3.mp4">
+      <video src="images/laser3.mp4" poster="images/laser-treatment.jpg" muted loop playsinline preload="metadata"></video>
+      <span class="gal-play">▶</span><span class="gal-zoom">⤢</span><div class="gal-cap"><small>Laser Hair Removal</small><strong>Expert Technique</strong></div>
+    </div>
+    <div class="gal-item gal-item-video" data-cat="laser" data-tag="Laser Hair Removal" data-title="Studio Experience" data-video="images/avis-beauty-3.mp4">
+      <video src="images/avis-beauty-3.mp4" poster="images/laser-treatment.jpg" muted loop playsinline preload="metadata"></video>
+      <span class="gal-play">▶</span><span class="gal-zoom">⤢</span><div class="gal-cap"><small>Laser Hair Removal</small><strong>Studio Experience</strong></div>
+    </div>
   </div>
 </section>
 
@@ -811,7 +841,8 @@ footer{ background:var(--lav-deeper); color:#fff; padding:5rem 5vw 1.6rem; }
     <span class="lb-counter" id="lbCounter"></span>
     <button class="lb-close" id="lbClose" aria-label="Close">×</button>
     <button class="lb-nav prev" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
-    <img id="lbImg" src="" alt="">
+    <img id="lbImg" class="hidden" src="" alt="">
+    <video id="lbVideo" class="hidden" controls playsinline></video>
     <button class="lb-nav next" id="lbNext" aria-label="Next"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></button>
     <div class="lb-cap"><small id="lbTag"></small><strong id="lbTitle"></strong></div>
   </div>
@@ -1217,6 +1248,7 @@ function toggleCategory(h3){
   const items = Array.from(document.querySelectorAll('.gal-item'));
   const filterBtns = document.querySelectorAll('.gal-f-btn');
   const lbImg = document.getElementById('lbImg');
+  const lbVideo = document.getElementById('lbVideo');
   const lbTag = document.getElementById('lbTag');
   const lbTitle = document.getElementById('lbTitle');
   const lbCounter = document.getElementById('lbCounter');
@@ -1246,17 +1278,39 @@ function toggleCategory(h3){
   function renderLightbox(){
     const item = visible[lbIndex];
     const img = item.querySelector('img');
-    lbImg.src = img.src;
-    lbImg.alt = img.alt;
+    const videoSrc = item.dataset.video;
     lbTag.textContent = item.dataset.tag;
     lbTitle.textContent = item.dataset.title;
     lbCounter.textContent = (lbIndex+1) + ' / ' + visible.length;
+    if(videoSrc){
+      lbImg.classList.add('hidden');
+      lbImg.removeAttribute('src');
+      lbVideo.classList.remove('hidden');
+      if(lbVideo.getAttribute('src') !== videoSrc) lbVideo.setAttribute('src', videoSrc);
+      lbVideo.play().catch(()=>{});
+      return;
+    }
+    lbVideo.pause();
+    lbVideo.classList.add('hidden');
+    lbVideo.removeAttribute('src');
+    lbImg.classList.remove('hidden');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
   }
   function closeLightbox(){
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
+    lbVideo.pause();
+    lbVideo.removeAttribute('src');
+    lbVideo.classList.add('hidden');
   }
   items.forEach(it=>it.addEventListener('click', ()=>openLightbox(it)));
+  document.querySelectorAll('.gal-item-video').forEach(item=>{
+    const video = item.querySelector('video');
+    if(!video) return;
+    item.addEventListener('mouseenter', ()=>{ video.play().catch(()=>{}); });
+    item.addEventListener('mouseleave', ()=>{ video.pause(); video.currentTime = 0; });
+  });
   document.getElementById('lbClose').addEventListener('click', closeLightbox);
   document.getElementById('lbNext').addEventListener('click', ()=>{ lbIndex = (lbIndex+1)%visible.length; renderLightbox(); });
   document.getElementById('lbPrev').addEventListener('click', ()=>{ lbIndex = (lbIndex-1+visible.length)%visible.length; renderLightbox(); });
